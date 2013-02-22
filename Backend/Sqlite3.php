@@ -42,6 +42,7 @@ class Sqlite3 extends Database
     {
         $res = $this->db->query("SELECT ip, proxytype, name FROM proxies WHERE ip='" . $this->db->escapeString($ip) . "'");
         $info = $res->fetchArray(SQLITE3_ASSOC);
+        if (!$info) return false;
         $ret = new Proxy($info['ip'], $info['proxytype'], $info['name']);
         return $ret;
     }

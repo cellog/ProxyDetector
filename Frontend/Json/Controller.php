@@ -118,7 +118,7 @@ class Controller extends Messager
 
     function listMessages(array $newmessages)
     {
-        return parent::listMessages(array('reply', 'parseJson', 'jsonHello'));
+        return parent::listMessages(array('reply', 'parseJson', 'jsonHello', 'jsonCheckMultiple'));
     }
 
     function receive($message, $content)
@@ -127,8 +127,8 @@ class Controller extends Messager
             return $this->jsonReply($content['message'], $content['params'], self::$id);
         } elseif ($message == 'parseJson') {
             $this->broadcast('json' . ucfirst($this->input['message']), $this->input);
-        } elseif ($message == 'jsonCheckips') {
-            $this->broadcast('checkMultiple', $content['params']['ips']);
+        } elseif ($message == 'jsonCheckMultiple') {
+            $this->broadcast('checkMultiple', $content['params']);
         }
         // STOP - add new json API to the parseJson message handler above
         return parent::receive($message, $content);
