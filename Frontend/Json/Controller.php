@@ -101,7 +101,7 @@ class Controller
             }
             if (!isset($this->input['apiversion'])
                 || $this->input['apiversion'] != self::APIVERSION) {
-                throw new JsonRpcException('Your Chrome extension is out of date, you need version ' .
+                throw new JsonRpcException(1, JsonRpcException::ILLEGALSERVICE, 'Your Chrome extension is out of date, you need version ' .
                                            self::minExtVersion . ' minimum to use this service');
             }
             if (!is_string($this->input['message'])
