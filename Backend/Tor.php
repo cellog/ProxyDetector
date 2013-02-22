@@ -14,7 +14,6 @@ class Tor
         if (!$content) {
             return;
         }
-        $this->database->removeType('tor');
         $content = explode("\n", $content);
         foreach ($content as $ip) {
             if ($ip[0] == '#') continue;
