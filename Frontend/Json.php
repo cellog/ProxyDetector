@@ -1,8 +1,8 @@
 <?php
 namespace ProxyDetector\Frontend;
-use ProxyDetector\Messager;
+use ProxyDetector\Messager, ProxyDetector\Frontend;
 
-class Json extends Messager
+class Json extends Messager implements Frontend
 {
     function __construct(Json\Controller $controller = null)
     {
