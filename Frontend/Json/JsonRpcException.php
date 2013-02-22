@@ -1,5 +1,5 @@
 <?php
-namespace SMGregsList\Frontend\Json;
+namespace ProxyDetector\Frontend\Json;
 class JsonRpcException extends \Exception
 {
     const ILLEGALSERVICE = 1;
