@@ -1,0 +1,10 @@
+
+MyProject.komodoproject
+
+.DS_Store
+
+chromeext/SMGregsListChrome.komodoproject
+
+*.komodoproject
+
+data/gregslist.db
