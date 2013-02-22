@@ -6,7 +6,7 @@ class Main extends Messager
     protected $frontend;
     function __construct(Frontend $frontend)
     {
-        $this->data = new Backend\DataLayer\Sqlite3;
+        $this->data = new Backend\Sqlite3;
         $this->frontend = $frontend;
         // register messages
         $frontend->attach($this);
