@@ -45,7 +45,7 @@ function __error($level, $err, $file, $line)
 }
 set_exception_handler(__NAMESPACE__ . '\\__handler');
 set_error_handler(__NAMESPACE__ . '\\__error');
-class Controller
+class Controller extends Messager
 {
     const APIVERSION = 1;
     const minExtVersion = '0.1.0';
