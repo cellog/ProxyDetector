@@ -127,6 +127,8 @@ class Controller
             return $this->jsonReply($content['message'], $content['params'], self::$id);
         } elseif ($message == 'parseJson') {
             $this->broadcast('json' . ucfirst($this->input['message']), $this->input);
+        } elseif ($message == 'jsonCheckips') {
+            $this->broadcast('checkMultiple', $content['params']['ips']);
         }
         // STOP - add new json API to the parseJson message handler above
         return parent::receive($message, $content);

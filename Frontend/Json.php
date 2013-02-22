@@ -14,7 +14,7 @@ class Json extends Messager
 
     function listMessages(array $newmessages)
     {
-        return parent::listMessages(array_merge($newmessages, array()));
+        return parent::listMessages(array_merge($newmessages, array('matches', 'ready', 'jsonHello')));
     }
 
     function jsonReply($message, $params = array())
@@ -28,6 +28,8 @@ class Json extends Messager
             $this->broadcast('parseJson');
         } elseif ($message == 'jsonHello') {
             $this->jsonReply('hello', array('api' => Json\Controller::APIVERSION, 'extmin' => Json\Controller::minExtVersion));
+        } elseif ($message == 'matches') {
+            $this->jsonReply('matches', $content);
         }
     }
 }

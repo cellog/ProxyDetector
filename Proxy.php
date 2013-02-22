@@ -25,4 +25,12 @@ class Proxy
     {
         return $this->name;
     }
+
+    function toJson()
+    {
+        return array(
+            'ip' => $this->ip,
+            'type' => $this->type,
+        );
+    }
 }

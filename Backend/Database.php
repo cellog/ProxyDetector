@@ -9,7 +9,7 @@ abstract class Database extends Messager
 
     function listMessages(array $newmessages)
     {
-        return parent::listMessages(array_merge($newmessages, array()));
+        return parent::listMessages(array_merge($newmessages, array('checkMultiple')));
     }
 
     function reply($message, $content)
@@ -33,6 +33,17 @@ abstract class Database extends Messager
             }
             $ret = $this->addProxy($content['ip'], $content['type'], $content['name']);
             $this->broadcast('proxyAdded', $ret);
+        } elseif ($message == 'checkMultiple') {
+            if (!is_array($content)) {
+                throw new \Exception('Internal error: checkMultiple message with non-array');
+            }
+            $ret = array();
+            foreach ($content as $ip) {
+                if ($p = $this->getProxy($ip)) {
+                    $ret[] = $p->toJson();
+                }
+            }
+            $this->broadcast('matches', $ret);
         }
     }
 }
