@@ -1,0 +1,17 @@
+{
+  "name": "freeproxylists grabber",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Striker Manager freeproxylists grabber",
+  "content_scripts": [
+    {
+      "matches" : ["http://freeproxylists.net*"],
+      "js":["remote.js","parseips.js"]
+    }
+  ],
+  "permissions": [
+    "http://freeproxylists.net*",
+    "http://www.chiaraquartet.net/fiscal/",
+    "tabs"
+  ]
+}
