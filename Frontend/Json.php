@@ -14,7 +14,7 @@ class Json extends Messager implements Frontend
 
     function listMessages(array $newmessages)
     {
-        return parent::listMessages(array_merge($newmessages, array('matches', 'ready', 'jsonHello')));
+        return parent::listMessages(array_merge($newmessages, array('matches', 'ready', 'jsonHello', 'processedFreeproxylist')));
     }
 
     function jsonReply($message, $params = array())
