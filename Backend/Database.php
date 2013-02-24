@@ -48,7 +48,7 @@ abstract class Database extends Messager
             $content = urldecode($content);
             preg_match_all('/>(\d+\.\d+\.\d+\.\d+)</', $content, $ips);
             foreach ($ips[1] as $ip) {
-                $this->addProxy($ip, 'Web proxy', 'http://freeproxylists.com');
+                $this->addProxy($ip, 'Web proxy', 'http://freeproxylists.com', true);
             }
             $this->broadcast('processedFreeproxylist');
         }
