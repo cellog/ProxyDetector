@@ -9,7 +9,7 @@ abstract class Database extends Messager
 
     function listMessages(array $newmessages)
     {
-        return parent::listMessages(array_merge($newmessages, array('checkMultiple')));
+        return parent::listMessages(array_merge($newmessages, array('checkMultiple', 'grepFreeproxylists')));
     }
 
     function reply($message, $content)
@@ -44,6 +44,13 @@ abstract class Database extends Messager
                 }
             }
             $this->broadcast('matches', $ret);
+        } elseif ($message == 'grepFreeproxylists') {
+            $content = urldecode($content);
+            preg_match_all('/>(\d+\.\d+\.\d+\.\d+)</', $content, $ips);
+            foreach ($ips[1] as $ip) {
+                $this->addProxy($ip, 'Web proxy', 'http://freeproxylists.com');
+            }
+            $this->broadcast('processedFreeproxylist');
         }
     }
 }

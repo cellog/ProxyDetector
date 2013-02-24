@@ -30,6 +30,8 @@ class Json extends Messager implements Frontend
             $this->jsonReply('hello', array('api' => Json\Controller::APIVERSION, 'extmin' => Json\Controller::minExtVersion));
         } elseif ($message == 'matches') {
             $this->jsonReply('matches', $content);
+        } elseif ($message == 'processedFreeproxylist') {
+            $this->jsonReply('done');
         }
     }
 }
