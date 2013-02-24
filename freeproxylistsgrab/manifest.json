@@ -5,13 +5,12 @@
   "description": "Striker Manager freeproxylists grabber",
   "content_scripts": [
     {
-      "matches" : ["http://freeproxylists.net*"],
+      "matches" : ["http://www.freeproxylists.net/*"],
       "js":["remote.js","parseips.js"]
     }
   ],
   "permissions": [
-    "http://freeproxylists.net*",
-    "http://www.chiaraquartet.net/fiscal/",
+    "http://www.freeproxylists.net/",
     "tabs"
   ]
 }

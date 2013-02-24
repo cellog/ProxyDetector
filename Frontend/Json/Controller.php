@@ -73,7 +73,8 @@ class Controller extends Messager
             exit(0);
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!preg_match('/^http:\/\/en[1-3]?\.strikermanager\.com/', $_SERVER['HTTP_REFERER'])) {
+            if (!preg_match('/^http:\/\/en[1-3]?\.strikermanager\.com/', $_SERVER['HTTP_REFERER']) &&
+                !preg_match('/^http:\/\/www.freeproxylists\.net/', $_SERVER['HTTP_REFERER'])) {
                 echo "Nice try";
                 exit;
             }
