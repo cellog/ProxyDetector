@@ -119,7 +119,7 @@ class Controller extends Messager
 
     function listMessages(array $newmessages)
     {
-        return parent::listMessages(array('reply', 'parseJson', 'jsonHello', 'jsonCheckMultiple'));
+        return parent::listMessages(array('reply', 'parseJson', 'jsonHello', 'jsonCheckMultiple', 'jsonGrepFreeproxylists'));
     }
 
     function receive($message, $content)
@@ -131,7 +131,7 @@ class Controller extends Messager
         } elseif ($message == 'jsonCheckMultiple') {
             $this->broadcast('checkMultiple', $content['params']);
         } elseif ($message == 'jsonGrepFreeproxylists') {
-            $this->broadcast('grepFreeproxylists', $content);
+            $this->broadcast('grepFreeproxylists', $content['params']);
         }
         return parent::receive($message, $content);
     }
