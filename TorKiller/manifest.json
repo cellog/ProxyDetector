@@ -1,0 +1,18 @@
+{
+  "name": "SM @ Proxy Detector",
+  "version": "1.1.0",
+  "manifest_version": 2,
+  "description": "Striker Manager Fiscal Proxy Detector",
+  "content_scripts": [
+    {
+      "matches" : ["http://*.strikermanager.com/sospechosos.php*"],
+      "all_frames" : true,
+      "js":["torips.js","hide_my_ass_proxy_list_ip.js","checkIPs.js","getHideMyAssIPs.js","remote.js","parseips.js"]
+    }
+  ],
+  "permissions": [
+    "http://*.strikermanager.com/",
+    "storage",
+    "tabs"
+  ]
+}
