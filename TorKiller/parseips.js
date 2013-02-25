@@ -24,7 +24,7 @@
   problem.innerText = problem.innerText + "," + text;
   problems[text] = 1;
  }
- var x = [ip1, ip2], tests = [];
+ var x = [ip1, ip2], tests = [], nodes = {};
  for (var v = 0; v <= 1; v++) {
   for (var i in x[v]) {
    var p = x[v][i];
@@ -37,16 +37,24 @@
    if (user != us) {
     continue;
    }
+   if (!nodes[ip]) {
+    nodes[ip] = [p.lastElementChild];
+   } else {
+    nodes[ip].push(p.lastElementChild);
+   }
    // check ip here
    if (isOperaMini(ip)) {
+    p.lastElementChild.style.color="#FF0000";
     setProblem("Opera Mini");
     continue;
    }
    if (isHideMyAssIPs(ip)) {
+    p.lastElementChild.style.color="#FF0000";
     setProblem("HideMyAss!");
     continue;
    }
    if (ip == '193.200.150.125') {
+    p.lastElementChild.style.color="#FF0000";
     setProblem('Anonymouse');
     continue;
    }
@@ -61,6 +69,9 @@
    return;
   }
   for (var i = 0;i < result.params.length; i++) {
+   for (var j = 0; j < nodes[result.params[i].ip].length; j++) {
+    nodes[result.params[i].ip][j].style.color = "#FF0000";
+   }
    setProblem(result.params[i].type);
   }
  });
