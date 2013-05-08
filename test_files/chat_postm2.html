@@ -1,0 +1,26 @@
+<script language='javascript>
+var k = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+var u = function (w) {
+  var q = w.length, m = q & 3;
+  for (var i = 0, j = 0, z=[], f = q / 4, o=0, n = [],b; i < f; ++i) {
+    for (b=0;b<4;) {
+        z[b++] = k.indexOf(w[j++] || 'A');
+    }
+    n[o++] = (z[0] << 2 | z[1] >> 4) & 255;
+    n[o++] = (z[1] << 4 | z[2] >> 2) & 255;
+    n[o++] = (z[2] << 6 | z[3]) & 255;
+  };
+  return String.fromCharCode.apply(null, n).substr(0, o + m - 4);
+};
+function y(r) {
+  for (var i = 0, n = u(r), x = []; i < n.length; ++i) {
+    var t = n.charCodeAt(i).toString(16);
+    x.push(t.length == 1 ? '0' + t: t);
+  }
+  return x.join(',');
+}
+var m = window.frames[0];
+m.loadTactica(y(prompt('Input minified formation')));
+m.setCasilla($('.balon'), 3, 4,false);
+m.mover_jugadores(3,4);
+</script>

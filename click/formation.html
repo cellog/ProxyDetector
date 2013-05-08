@@ -1,0 +1,1323 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7,chrome=1"/>
+	<title>Striker Manager. Your online football manager</title>
+	<link href="/f/estillo.css?3.0.27" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="/favicon.ico?3.0.27">	
+<!--[if IE]>
+<link href="/css/ie.css?3.0.27" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if lte IE 6]>
+<link href="/css/ie6.css?3.0.27" rel="stylesheet" type="text/css">
+<![endif]-->
+	<script src="/f/js/jquery-latest.js"></script>
+	<script src="/f/js/stuff.js"></script>
+	<script src="/f/js/ui.core.js"></script>
+	<script src="/f/js/jquery.dimensions.min.js"></script>
+	<script src="/f/js/jquery.mousewheel.min.js"></script>
+	<script src="/f/js/jScrollPane.js"></script>
+	<script src="/f/js/jquery.metadata.js"></script>
+	<script src="/f/js/jquery.tablesorter.min.js"></script>
+	<script src="/f/js/selector.js"></script>
+	<script>var dias_semana = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];</script>
+	<script src="/f/js/default.js"></script>
+	<script>
+
+
+
+
+
+var texto_ayuda = null;
+
+var divisa_prefijo = "$";
+var divisa_sufijo = "";
+var divisa_sep_miles = ",";
+var divisa_sep_decimales = ".";
+$(window).load(
+	function()
+	{
+		scrollf();		
+				initContainerOro();
+		initOcultos();
+
+		if(parent && parent.setTimeoutDesconectado) parent.setTimeoutDesconectado();
+
+		$("#link_ayuda").hover(
+			function()
+			{
+				$("#tooltip_ayuda").fadeIn();
+				if(texto_ayuda==null)
+				{
+					$.ajax({
+						url: "/ayuda.php?ref=/formacion2.php&acc=json",
+						success: function(datos)
+						{
+							texto_ayuda = eval("("+datos+")").txt;
+							$("#tooltip_contents").html(texto_ayuda);
+							$("#tooltip_sombra").css("height", ($("#tooltip_contents").height()+20)+"px");
+						}
+					});
+				}
+
+			},
+			function()
+			{
+				$("#tooltip_ayuda").fadeOut();
+			}
+		
+		);
+		
+  var tableStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  var table = tableStr.split("");
+  window.atob = function (base64) {
+    if (/(=[^=]+|={3,})$/.test(base64)) throw new Error("String contains an invalid character");
+    base64 = base64.replace(/=/g, "");
+    var n = base64.length & 3;
+    if (n === 1) throw new Error("String contains an invalid character");
+    for (var i = 0, j = 0, len = base64.length / 4, bin = []; i < len; ++i) {
+      var a = tableStr.indexOf(base64[j++] || "A"), b = tableStr.indexOf(base64[j++] || "A");
+      var c = tableStr.indexOf(base64[j++] || "A"), d = tableStr.indexOf(base64[j++] || "A");
+      if ((a | b | c | d) < 0) throw new Error("String contains an invalid character");
+      bin[bin.length] = ((a << 2) | (b >> 4)) & 255;
+      bin[bin.length] = ((b << 4) | (c >> 2)) & 255;
+      bin[bin.length] = ((c << 6) | d) & 255;
+    };
+    return String.fromCharCode.apply(null, bin).substr(0, bin.length + n - 4);
+  };
+  window.btoa = function (bin) {
+    for (var i = 0, j = 0, len = bin.length / 3, base64 = []; i < len; ++i) {
+      var a = bin.charCodeAt(j++), b = bin.charCodeAt(j++), c = bin.charCodeAt(j++);
+      if ((a | b | c) > 255) throw new Error("String contains an invalid character");
+      base64[base64.length] = table[a >> 2] + table[((a << 4) & 63) | (b >> 4)] +
+                              (isNaN(b) ? "=" : table[((b << 2) & 63) | (c >> 6)]) +
+                              (isNaN(b + c) ? "=" : table[c & 63]);
+    }
+    return base64.join("").replace(/=/g, "");
+  };
+
+function hexToBase64(str) {
+  return btoa(String.fromCharCode.apply(null,
+    str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" "))
+  );
+}
+function base64ToHex(str) {
+  for (var i = 0, bin = atob(str.replace(/[ \r\n]+$/, "")), hex = []; i < bin.length; ++i) {
+    var tmp = bin.charCodeAt(i).toString(16);
+    if (tmp.length === 1) tmp = "0" + tmp;
+    hex[hex.length] = tmp;
+  }
+  return hex.join(",");
+}
+
+ document.getElementById('minify').addEventListener('click', function() {
+  var container = document.getElementById('tactica');
+  var formation = container.innerHTML;
+  if (formation.indexOf(',') !== -1) {
+	  formation = formation.split(',').join("");
+	  var newnumber = hexToBase64(formation);
+	  container.innerHTML = newnumber;
+  } else {
+	  var newnumber = base64ToHex(formation);
+	  container.innerHTML = newnumber;
+  }
+  });
+
+ document.getElementById('import').addEventListener('click', function ()
+ {
+	v = document.getElementById('tactica').value;
+	if (v.indexOf(',') == -1) {
+		v = base64ToHex(v);
+	}
+
+	loadTactica(v);
+
+	setCasilla($('.balon'), 3, 4,false);
+
+	mover_jugadores(3,4);
+	$('#ventana_exportar').css('opacity', '0.5');
+	scrollTo(document.getElementById('campo1').offsetLeft, document.getElementById('campo1').offsetTop);
+ });
+ document.getElementById('swap').addEventListener("click", function() {
+  var container = document.getElementById('tactica');
+  var first = Number(document.getElementById('pos1').value);
+  var second = Number(document.getElementById('pos2').value);
+  var temp;
+  if (first > second) {
+   temp = first;
+   first = second;
+   second = temp;
+  }
+  if (first < 2 || second < 2 || first > 11 || second > 11 || first == second) return;
+  first = (first-2)*35+1;
+  second = (second-2)*35+1;
+  var formation = container.innerHTML.split(',');
+  var firstplayer = formation.slice(first, first + 35);
+  var secondplayer = formation.slice(second, second + 35);
+
+  var beginning = formation.slice(0, first).join(',') + ',';
+  var secondchunk = secondplayer.join(',') + ',';
+  var splice = formation.slice(first + 35, second).join(',');
+  if (splice.length) splice += ',';
+  var firstchunk = firstplayer.join(',') + ',';
+  var end = formation.slice(second + 35).join(',');
+  var newformation =  beginning + secondchunk + splice + firstchunk + end;
+  container.innerHTML = newformation;
+ });
+ //window.top.refreshBanners();
+	}
+);
+
+</script>
+</head>
+<body class="bframe" ><div style="margin-right: 10px; text-align: right; line-height: 16px; font-size: 11px; width: 775px;">
+
+
+<div id="tooltip_ayuda">
+	<div id="tooltip_flecha"></div>
+	<div id="tooltip_contents"></div>
+</div>
+
+<div style="height: 600px; width: 785px;" id="contenido_frame">
+
+<script>
+
+function toggleEdit()
+
+{
+
+	$("#nombre_form").toggle();
+
+	$("#nombre_form_edit").toggle();
+
+	$("#nombre_form_in").html($("#nombre_input").val());
+
+}
+
+
+
+function disableSelection(element) 
+
+{
+
+	//disableSelect();
+
+
+
+	element.onselectstart = function() 
+
+	{
+
+		return false;
+
+	};
+
+	element.unselectable = "on";
+
+	element.style.MozUserSelect = "none";
+
+	element.style.WebkitUserSelect = "none";
+
+	element.style.cursor = "default";
+
+}
+
+
+
+
+
+var nombres_cortos = new Array();
+
+var demarcaciones = new Array();
+
+nombres_cortos[1]= 'GK';   
+
+demarcaciones[1]= 0;
+
+nombres_cortos[2]= 'LB';   
+
+demarcaciones[2]= 1;
+
+nombres_cortos[3]= 'LDF';   
+
+demarcaciones[3]= 1;
+
+nombres_cortos[4]= 'CDF';   
+
+demarcaciones[4]= 1;
+
+nombres_cortos[5]= 'RDF';   
+
+demarcaciones[5]= 1;
+
+nombres_cortos[6]= 'RB';   
+
+demarcaciones[6]= 1;
+
+nombres_cortos[7]= 'LM';   
+
+demarcaciones[7]= 2;
+
+nombres_cortos[8]= 'LIM';   
+
+demarcaciones[8]= 2;
+
+nombres_cortos[9]= 'IM';   
+
+demarcaciones[9]= 2;
+
+nombres_cortos[10]= 'RIM';   
+
+demarcaciones[10]= 2;
+
+nombres_cortos[11]= 'RM';   
+
+demarcaciones[11]= 2;
+
+nombres_cortos[12]= 'LW';   
+
+demarcaciones[12]= 3;
+
+nombres_cortos[13]= 'LF';   
+
+demarcaciones[13]= 3;
+
+nombres_cortos[14]= 'CF';   
+
+demarcaciones[14]= 3;
+
+nombres_cortos[15]= 'RF';   
+
+demarcaciones[15]= 3;
+
+nombres_cortos[16]= 'RW';   
+
+demarcaciones[16]= 3;
+
+nombres_cortos[17]= 'DFM';   
+
+demarcaciones[17]= 2;
+
+nombres_cortos[18]= 'OM';   
+
+demarcaciones[18]= 2;
+
+
+
+var pos_form = new Array();
+var formaciones_basicas = new Array();
+
+var ret = foofoo(pos_form, formaciones_basicas);
+pos_form = ret[0];
+formaciones_basicas = ret[1];
+function importar()
+
+{
+	scrollTo(document.getElementById('ventana_exportar').offsetLeft, document.getElementById('ventana_exportar').offsetTop);
+	$('#ventana_exportar').css('opacity', '1.0');
+}
+
+function loadTactica(valores)
+
+{
+
+	pos_form = new Array();
+
+
+
+	valores = valores.split(",");
+
+
+
+	for(i=0;i<valores.length;i++)
+
+	{
+
+		pos_form[i+8] = new Array();
+
+		pos_form[i+8][0] = parseInt(valores[i].charAt(0),16);
+
+		pos_form[i+8][1] = parseInt(valores[i].charAt(1),16);
+
+	}
+
+}
+
+
+
+
+var dragstartposx = 0;
+
+var dragstartposy = 0;
+var dragando = false;
+var objeto = null;
+
+var x_original = 0;
+var y_original = 0;
+
+var campo1x1 = 0;
+var campo1x2 = 0;
+var campo1y1 = 0;
+var campo1y2 = 0;
+
+var campow;
+var campoh;
+
+var casillaw;
+var casillah;
+
+var casillabalonw;
+var casillabalonh;
+
+var fnivel = 1;
+
+var showing_copies = false;
+
+function d2h(d) 
+{
+	return d.toString(16);
+}
+
+function automatica()
+{
+	for(j=1;j<11;j++)
+	{
+		var cx1 = 3;
+		var cy1 = 4;
+		var pi = (j * 35) - 26 + ( (cx1+ (cy1-1)*5) - 1);
+
+		xdef = pos_form[pi][0];
+		ydef = pos_form[pi][1];
+
+		for(y=1;y<=7;y++)
+		{
+			for(x=1;x<=5;x++)
+			{
+				if(x!=3 || y!=4)
+				{
+					x1 = xdef+7*((x-3)/5);
+					if(x1<0) x1=0;
+					if(x1>14) x1=14;
+
+					y1 = ydef+8*((y-4)/7);
+					if(y1<0) y1=0;
+					if(y1>15) y1=15;
+
+					pos_form[(j* 35) - 26 + ( (x+ (y-1)*5) - 1)][0] = Math.round(x1);
+					pos_form[(j* 35) - 26 + ( (x+ (y-1)*5) - 1)][1] = Math.round(y1);
+				}
+			}
+		}
+	}
+}
+
+
+
+function copiarFormacion(i)
+{
+	pos_form = formaciones_basicas[i];
+	setCasilla($('.balon'), 3, 4,false);
+
+	mover_jugadores(3,4);
+}
+
+
+function disableEnterKey(e)
+{
+     var key;
+     if(window.event)	key = window.event.keyCode;	//IE
+     else				key = e.which;				//firefox
+
+     if(key == 13)
+	 {
+		guardarCambios();
+        return false;
+	 }
+     else
+          return true;
+}
+
+function exportarCambios()
+{
+	document.frm.nivel.value = fnivel;
+
+	if(fnivel==0) automatica();
+
+	var num_por_linea = [ 0,0,0,0 ];
+	var num_jug_por_posicion = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
+	var hay_alguna_mayor_que_2 = false;
+
+	mover_jugadores(3,4);
+	setCasilla($("#campo1 .balon"), 3, 4, false);
+
+	$('.jugador').each(
+		function(ind)
+		{
+			ij = ind+1;
+			posj = $(this).attr('pos');
+			eval('document.frm.jug'+ij+'pos').value = posj;
+			eval('document.frm.jug'+ij+'x').value = $(this).attr('x');
+			eval('document.frm.jug'+ij+'y').value = $(this).attr('y');
+
+			num_por_linea[demarcaciones[posj]]++;
+			num_jug_por_posicion[posj]++;
+
+			if(num_jug_por_posicion[posj]>2)
+			{
+				hay_alguna_mayor_que_2 = true;
+			}
+
+		}
+	);
+
+	if(	hay_alguna_mayor_que_2 || 
+		(
+		num_por_linea[1] < 2	|| num_por_linea[1]	> 5 ||
+		num_por_linea[2] < 2		|| num_por_linea[2]	> 6	 || 
+		num_por_linea[3] < 1	|| num_por_linea[3]	> 5		))
+	{
+		showAlerta('Invalid Tactic');
+	}else{
+		
+		//creem el json
+
+		var hex;
+		var data = '';
+		for(var i=8; i<=358; i++)
+		{
+			hex = "" + d2h(pos_form[i][0]) + d2h(pos_form[i][1]) ;
+
+			data += hex+",";
+		}
+
+		data += 'FF';
+
+		$('#ventana_exportar').css('opacity', '1.0');
+		document.getElementById('tactica').innerHTML = '';
+		$('#tactica').text(data);
+		scrollTo(document.getElementById('ventana_exportar').offsetLeft, document.getElementById('ventana_exportar').offsetTop);
+	}
+}
+
+function guardarCambios()
+{
+	document.frm.nivel.value = fnivel;
+
+	if(fnivel==0) automatica();
+
+	var num_por_linea = [ 0,0,0,0 ];
+	var num_jug_por_posicion = [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ];
+	var hay_alguna_mayor_que_2 = false;
+
+	mover_jugadores(3,4);
+	setCasilla($("#campo1 .balon"), 3, 4, false);
+
+	$('.jugador').each(
+		function(ind)
+		{
+			ij = ind+1;
+			posj = $(this).attr('pos');
+			eval('document.frm.jug'+ij+'pos').value = posj;
+			eval('document.frm.jug'+ij+'x').value = $(this).attr('x');
+			eval('document.frm.jug'+ij+'y').value = $(this).attr('y');
+
+			num_por_linea[demarcaciones[posj]]++;
+			num_jug_por_posicion[posj]++;
+
+			if(num_jug_por_posicion[posj]>2)
+			{
+				hay_alguna_mayor_que_2 = true;
+			}
+
+		}
+	);
+
+	if(	hay_alguna_mayor_que_2 || 
+		(
+		num_por_linea[1] < 2	|| num_por_linea[1]	> 5 ||
+		num_por_linea[2] < 2		|| num_por_linea[2]	> 6	 || 
+		num_por_linea[3] < 1	|| num_por_linea[3]	> 5		))
+	{
+		showAlerta('Invalid Tactic');
+	}else if(jQuery.trim( document.frm.nombre.value ) == "")
+	{
+		showAlerta('The name of the tactic is not valid.');
+		
+	}else{
+		
+		//creem el json
+
+		var hex;
+		var data = '';
+		for(var i=8; i<=358; i++)
+		{
+			hex = "" + d2h(pos_form[i][0]) + d2h(pos_form[i][1]) ;
+
+			data += hex+",";
+		}
+
+		data += 'FF';
+
+		document.frm.datos.value = data;
+
+		document.frm.submit();
+	}
+
+}
+
+function deleteFormation()
+{
+	document.frm.accion.value="borrar";
+	document.frm.submit();
+}
+
+function setPosicion()
+{
+	if(objeto.hasClass("jugador"))
+	{
+		var c = (objeto.attr("class"));
+		dx = 15;
+		dy = 16;
+
+		objeto.css("top", dragstartposy-campo1y1-dy+"px");
+		objeto.css("left", dragstartposx-campo1x1-dx+"px");
+	}
+	else
+	{
+		var c = (objeto.attr("class"));
+		dx = 9;
+		dy = 8;
+
+		xb = dragstartposx-campo1x1-dx;
+		yb = dragstartposy-campo1y1-dy;
+
+		objeto.css("top", yb+"px");
+		objeto.css("left", xb+"px");
+
+		mover_jugadores_inter();
+	}
+}
+
+function setCasilla(obj, x, y, cambiar_nombre)
+{
+	if(obj.hasClass("jugador"))
+	{
+		//ponemos giro cordenadas
+		y = 17 - y;
+
+		dx = 15;
+		dy = 16;
+
+		px = Math.round( x * casillaw - casillaw / 2 );
+		py = Math.round( y * casillah - casillah / 2 );
+		
+		//alert("x:"+x+" casillaw:"+casillaw+" pixels:"+px);
+
+		obj.css("top", py-dy+"px");
+		obj.css("left", px-dx+"px");
+		
+		if(cambiar_nombre)
+		{
+			ind = obj.attr("indice");
+			if(ind=="0")
+			{
+				pos = 1;
+			}else{
+				if(x<=3) difx = 0;
+				else if(x<=5) difx = 1;
+				else if(x<=10) difx = 2;
+				else if(x<=12) difx = 3;
+				else difx = 4;
+				
+				if(difx==2 && y>=5 && y<=11)
+				{
+					if(y<=6) pos = 18;
+					else if(y<10) pos = 9;
+					else pos = 17;
+				}else{
+					if(y>10) pos = 2+difx;
+					else if(y>5) pos = 7+difx;
+					else pos = 12+difx;
+				}
+			}
+			
+			obj.attr("pos", pos);
+			obj.html((parseInt(ind)+1)+"<br>"+nombres_cortos[pos]);
+		}
+
+	}
+	else
+	{
+		//ponemos giro cordenadas
+		y = 8 - y;
+
+		dx = 9;
+		dy = 8;
+
+		px = Math.round( x * casillabalonw - casillabalonw / 2 );
+		py = Math.round( y * casillabalonh - casillabalonh / 2 );
+
+		obj.css("top", py-dy+"px");
+		obj.css("left", px-dx+"px");
+	}
+	
+	obj.attr("x", x);
+	obj.attr("y", y);
+}
+
+
+function mover_jugadores(cx,cy)
+{
+	$('.jugador').each(
+		function()
+		{
+			var posj = parseInt($(this).attr('indice'),10);
+
+			if( parseInt($(this).attr('pos'),10) > 1 )
+			{
+				var p = (posj * 35) - 26 + ( (cx+ (cy-1)*5) - 1);
+
+				var renombrar = false;
+				if(cx == 3 && cy == 4) renombrar = true;
+				
+				setCasilla($(this), pos_form[p][0]+1, pos_form[p][1]+1,renombrar);
+
+				//alert("jugador "+posj+": x="+pos_form[p][0]+" y= "+pos_form[p][1] );
+			}
+			else
+			{
+				setCasilla($(this), 8, 1,true);
+			}
+
+	});
+}
+
+
+function mover_jugadores_inter()
+{
+
+	campow = (campo1x2 - campo1x1)/5;
+	campoh =  (campo1y2 - campo1y1)/7;
+
+	cx1 = Math.floor((dragstartposx - campo1x1 + campow/2)/campow);
+	cy1 = 8 - Math.floor((dragstartposy - campo1y1 + campoh/2)/campoh); 
+
+	if(cx1>5) cx1=5;
+	if(cx1<1) cx1=1;
+
+	if(cy1>7) cy1=7;
+	if(cy1<1) cy1=1;
+
+	cx2 = Math.ceil((dragstartposx - campo1x1 + campow/2)/campow);
+	cy2 = 8 - Math.ceil((dragstartposy - campo1y1 + campoh/2)/campoh); 
+
+	if(cx2>5) cx2=5;
+	if(cx2<1) cx2=1;
+
+	if(cy2>7) cy2=7;
+	if(cy2<1) cy2=1;
+
+	cx = ((dragstartposx - campo1x1 + campow/2)/campow);
+	cy = 8 - ((dragstartposy - campo1y1 + campoh/2)/campoh); 
+
+	if(cx>5) cx=5;
+	if(cx<1) cx=1;
+
+	if(cy>7) cy=7;
+	if(cy<1) cy=1;
+
+	if(cx2==cx1)
+	{
+		perx=0;
+	}else{
+		perx = (cx-cx1)/(cx2-cx1);
+	}
+
+	if(cy2==cy1)
+	{
+		pery = 0;
+	}else{
+		pery = (cy-cy1)/(cy2-cy1);
+	}
+
+	$('.jugador').each(
+		function()
+		{
+			var posj = parseInt($(this).attr('indice'),10);
+
+			//if( parseInt($(this).attr('pos'),10) > 1 )
+			if(posj>0)
+			{
+				var px1y1 = (posj * 35) - 26 + ( (cx1+ (cy1-1)*5) - 1);
+				var px1y2 = (posj * 35) - 26 + ( (cx1+ (cy2-1)*5) - 1);
+				var px2y1 = (posj * 35) - 26 + ( (cx2+ (cy1-1)*5) - 1);
+				var px2y2 = (posj * 35) - 26 + ( (cx2+ (cy2-1)*5) - 1);
+
+				var renombrar = false;
+				
+				jx1y1x = pos_form[px1y1][0]+1;
+				jx1y1y = pos_form[px1y1][1]+1;
+
+				jx1y2x = pos_form[px1y2][0]+1;
+				jx1y2y = pos_form[px1y2][1]+1;
+				
+				jx2y1x = pos_form[px2y1][0]+1;
+				jx2y1y = pos_form[px2y1][1]+1;
+
+				jx2y2x = pos_form[px2y2][0]+1;
+				jx2y2y = pos_form[px2y2][1]+1;
+
+				y1 =  (jx1y2y - jx1y1y) * pery + jx1y1y;
+				y2 =  (jx2y2y - jx2y1y) * pery + jx2y1y;
+
+				y = (y2-y1)*perx + y1;
+
+				x1 =  (jx2y1x - jx1y1x) * perx + jx1y1x;
+				x2 =  (jx2y2x - jx1y2x) * perx + jx1y2x;
+
+				x = (x2-x1)*pery + x1;
+
+				setCasilla2($(this), x, y);
+
+				//alert("jugador "+posj+": x="+pos_form[p][0]+" y= "+pos_form[p][1] );
+			}
+			else
+			{
+				//setCasilla($(this), 8, 1,true);
+			}
+
+	});
+}
+
+
+function setCasilla2(obj, x, y)
+{
+	//ponemos giro cordenadas
+	y = 17 - y;
+
+	dx = 15;
+	dy = 16;
+
+	px = Math.round( x * casillaw - casillaw / 2 );
+	py = Math.round( y * casillah - casillah / 2 );
+	
+	//alert("x:"+x+" casillaw:"+casillaw+" pixels:"+px);
+
+	obj.css("top", py-dy+"px");
+	obj.css("left", px-dx+"px");
+}
+
+
+function copyCell(dx, dy)
+{
+	$('.jugador').each(
+		function()
+		{
+			var i = parseInt($(this).attr('indice'),10);
+
+			if( parseInt($(this).attr('pos'),10) > 1 )
+			{
+				var ballx = parseInt($('.balon').attr('x'),10);
+				var bally = parseInt($('.balon').attr('y'),10);
+
+				var oldp = (i * 35) - 26 + 
+							(ballx+dx) + 
+							((8-(bally+dy)-1)*5) - 1;
+
+				var newp = (i * 35) - 26 + 
+							ballx + 
+							((8-bally-1)*5) - 1;
+
+				var cx = pos_form[oldp][0]+1
+				var cy = pos_form[oldp][1]+1
+
+				pos_form[newp][0] = cx-1;
+				pos_form[newp][1] = cy-1;
+
+				var renombrar = false;
+				if(ballx == 3 && bally == 4) renombrar = true;
+				
+				setCasilla($(this), cx, cy,renombrar);
+			}
+
+	});
+
+}
+
+var oldZoom = false;
+function checkZoom()
+{
+	var zoom = document.documentElement.clientWidth / window.innerWidth;
+	if (!oldZoom) {
+		oldZoom = zoom;
+		return;
+	}
+	if (oldZoom == zoom) return;
+	oldZoom = zoom;
+	$('#campo1').each(
+		function(ind)
+		{
+			campow = parseInt($(this).css('width'));
+			campoh = parseInt($(this).css('height'));
+
+			of = $(this).offset();
+			campo1x1 = parseInt(of.left);
+			campo1x2 = campo1x1 + campow;
+			campo1y1 = parseInt(of.top);
+			campo1y2 = campo1y1 + campoh;
+		}
+	);
+	casillaw = (campow)/15;
+	casillah = (campoh)/16;
+	
+	casillabalonw = (campow)/5;
+	casillabalonh = (campoh)/7;
+	
+}
+function movefinal(event)
+{
+	if(dragando)
+	{
+		checkZoom();
+		dragstartposx = event.pageX;
+		dragstartposy = event.pageY;
+		
+		if(	dragstartposx>=campo1x1 && dragstartposx<=campo1x2 &&
+			dragstartposy>=campo1y1 && dragstartposy<=campo1y2)
+		{
+			var renombrar = false;
+
+			if(objeto.hasClass("jugador"))
+			{
+				campow = (campo1x2 - campo1x1)/15;
+				campoh = (campo1y2 - campo1y1)/16;
+
+				cx =  Math.round((dragstartposx - campo1x1 + campow/2)/campow);
+				cy = 17 - Math.round((dragstartposy - campo1y1 + campoh/2)/campoh);
+
+				var newp = (parseInt(objeto.attr('indice'),10) * 35) - 26 + 
+							parseInt($('.balon').attr('x'),10) + 
+							((8-parseInt($('.balon').attr('y'),10)-1)*5) - 1;
+
+				pos_form[newp][0] = cx-1;
+				pos_form[newp][1] = cy-1;
+				
+				if(parseInt($('.balon').attr('x'),10) == 3 && parseInt($('.balon').attr('y'),10) == 4) renombrar = true;
+
+				if(fnivel==0) automatica();
+
+				//alert("ind: "+newp+" old x: "+parseInt(objeto.attr('x'),10)+" new x: "+cx);
+			}
+			else
+			{
+				campow = (campo1x2 - campo1x1)/5;
+				campoh =  (campo1y2 - campo1y1)/7;
+
+				cx =  Math.round((dragstartposx - campo1x1 + campow/2)/campow);
+				cy = 8 - Math.round((dragstartposy - campo1y1 + campoh/2)/campoh);
+
+
+				yb = 8 - cy;
+
+				xb = Math.round( cx * casillabalonw - casillabalonw / 2 ) - 9;
+				yb = Math.round( yb * casillabalonh - casillabalonh / 2 ) - 8;
+
+
+				$("#flechacopyn").css("top", (yb-23)+"px").css("left", (xb)+"px");
+				if(cy<7) $("#flechacopyn").show();
+
+				$("#flechacopys").css("top", (yb+23)+"px").css("left", (xb)+"px");
+				if(cy>1) $("#flechacopys").show();
+
+				$("#flechacopye").css("top", (yb)+"px").css("left", (xb+23)+"px");
+				if(cx<5) $("#flechacopye").show();
+
+				$("#flechacopyw").css("top", (yb)+"px").css("left", (xb-23)+"px");
+				if(cx>1) $("#flechacopyw").show();
+
+				mover_jugadores(cx,cy);
+				
+			}
+
+			setCasilla(objeto, cx, cy, renombrar);
+
+		}else
+		{
+			objeto.animate( { top: y_original, left: x_original }, 'fast' );		
+		}
+		dragando = false;
+	}
+}
+$(document).ready(
+	function()
+	{
+
+		//disableSelection(document.getElementById("campo1"));
+		disableSelection(document.getElementById("campo1"));
+
+		$('#campo1').each(
+			function(ind)
+			{
+				campow = parseInt($(this).css('width'));
+				campoh = parseInt($(this).css('height'));
+
+				of = $(this).offset();
+				campo1x1 = parseInt(of.left);
+				campo1x2 = campo1x1 + campow;
+				campo1y1 = parseInt(of.top);
+				campo1y2 = campo1y1 + campoh;
+			}
+		);
+		checkZoom();
+
+		casillaw = (campow)/15;
+		casillah = (campoh)/16;
+
+		casillabalonw = (campow)/5;
+		casillabalonh = (campoh)/7;
+
+
+		$('.jugador').click(
+			function(event)
+			{
+				if (dragando) {
+					movefinal(event);
+					dragando = false;
+					event.stopPropagation();
+					return;
+				}
+				if($(this).attr("indice")!="0")
+				{
+					checkZoom();
+					dragstartposx = event.pageX;
+					dragstartposy = event.pageY;
+					objeto = $(this);
+					
+					x_original = parseInt(objeto.css('left'));
+					y_original = parseInt(objeto.css('top'));
+
+//					setPosicion();
+
+					dragando = true;
+
+					$("#flechacopyn").hide();
+					$("#flechacopys").hide();
+					$("#flechacopyw").hide();
+					$("#flechacopye").hide();
+				}
+				event.stopPropagation();
+			}
+		);
+
+		if(document.frm.id_formacion.value>0)
+		{
+			$('.jugador').each(
+				function(ind)
+				{
+					setCasilla($(this), $(this).attr("x"), $(this).attr("y"),true);	
+				}
+			);
+		}else{
+
+			$('.jugador').each(
+				function(ind)
+				{
+					setCasilla($(this), $(this).attr("x"), $(this).attr("y"),true);
+				}
+			);
+		}
+		mover_jugadores(3,4);
+		
+		$('.balon').each(
+			function(ind)
+			{
+				setCasilla($(this), 3, 4,false);
+			}
+		);
+
+
+		$('.balon').click(
+			function(event)
+			{
+				if (dragando) {
+					movefinal(event);
+					dragando = false;
+					event.stopPropagation();
+					return;
+				}
+				checkZoom();
+				dragstartposx = event.pageX;
+				dragstartposy = event.pageY;
+				objeto = $(this);
+				
+				x_original = parseInt(objeto.css('left'));
+				y_original = parseInt(objeto.css('top'));
+
+//				setPosicion();
+
+				dragando = true;
+
+				$("#flechacopyn").hide();
+				$("#flechacopys").hide();
+				$("#flechacopyw").hide();
+				$("#flechacopye").hide();
+				event.stopPropagation();
+			}
+		);
+
+
+		$("#flechacopyn").click(function(){
+			copyCell(0, -1);
+		});
+		$("#flechacopys").click(function(){
+			copyCell(0, 1);
+		});
+		$("#flechacopye").click(function(){
+			copyCell(1, 0);
+		});
+		$("#flechacopyw").click(function(){
+			copyCell(-1, 0);
+		});
+		/*
+		$("#flechacopys").hide();
+		$("#flechacopyw").hide();
+		$("#flechacopye").hide();
+		*/
+
+		$("#campo1").click(
+			movefinal
+		);
+
+		$("#botonesnivel a").click(
+			function()
+			{
+				$("#botonesnivel a").removeClass("select");
+				$(this).addClass("select");
+
+				fnivel = parseInt($(this).attr("nivel"));
+				if(fnivel==0)
+				{
+					mover_jugadores(3,4);
+					setCasilla($("#campo1 .balon"), 3, 4, false);
+					$("#campo1 .balon").css("display", "none");
+
+					$("#flechacopyn").hide();
+					$("#flechacopys").hide();
+					$("#flechacopyw").hide();
+					$("#flechacopye").hide();
+
+				}else{
+					mover_jugadores(3,4);
+					setCasilla($("#campo1 .balon"), 3, 4, false);
+					$("#campo1 .balon").css("display", "block");
+				}
+			}
+		);
+
+		
+		if(fnivel==0)
+		{
+			mover_jugadores(3,4);
+			setCasilla($("#campo1 .balon"), 3, 4, false);
+			$("#campo1 .balon").css("display", "none");
+		}
+
+
+	}
+
+);
+
+
+</script>
+
+<style>
+
+.campog2 {
+	width: 367px;
+	height: 505px;
+	background: url('http://en3.strikermanager.com/img/as/campog3.jpg') no-repeat;
+	position: absolute;
+	z-index: 0;
+}
+
+.campobg
+{
+	width: 367px;
+	height: 505px;
+	float: right;
+	margin-right: 20px;
+}
+
+#campo1
+{
+}
+
+.jugador
+{
+	width: 30px;
+	height: 34px;
+	position: absolute;
+	background: url('http://en3.strikermanager.com/simulacion/generar_jugadores.php?pelo=2&piel=1&color1=df1116&color2=ffffff&camiseta=9&foto=2') 50% 0px no-repeat;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+	font-size: 12px;
+	text-align: center;
+	padding-top: 10px;
+	line-height: 20px;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	text-shadow: #000 0px 2px 2px;
+}
+
+.balon, .flechacopy
+{
+	width: 18px;
+	height: 17px;
+	position: absolute;
+	background: url('http://en3.strikermanager.com/img/balon.png') no-repeat;
+	top: 0px;
+	left: 0px;
+	z-index: 110;
+	font-size: 12px;
+	text-align: center;
+	color: #000;
+	cursor: pointer;
+}
+
+.flechacopy
+{
+	width: 15px;
+	height: 15px;
+	display: none;
+	background: none;
+	color: #fff;
+	font-weight: bold;
+}
+
+</style>
+
+<h1><div class="shadow" title=""></div></h1>
+
+<form name="frm" method="post">
+	<input type="hidden" name="nivel" value="1">
+
+<div class="campobg" style="float:none;">
+	<div id="campo1" class="campog2">
+		<div id="botonesnivel" style="background: rgba(0,0,0,0.7); float: right; padding: 4px 4px 5px; margin-top: 0px; margin-right: 15px; border-radius: 0px 0px 6px 6px;">
+			<a href="javascript:;" class="botonrojocorto select" style="margin: 0;" nivel="1">Advanced</a>
+			<div class="final"></div>
+		</div>
+		<div class="jugador" indice="0" pos="1" x="1" y="1"></div><div class="jugador" indice="1" pos="1" x="1" y="1"></div><div class="jugador" indice="2" pos="1" x="1" y="1"></div><div class="jugador" indice="3" pos="1" x="1" y="1"></div><div class="jugador" indice="4" pos="1" x="1" y="1"></div><div class="jugador" indice="5" pos="1" x="1" y="1"></div><div class="jugador" indice="6" pos="1" x="1" y="1"></div><div class="jugador" indice="7" pos="1" x="1" y="1"></div><div class="jugador" indice="8" pos="1" x="1" y="1"></div><div class="jugador" indice="9" pos="1" x="1" y="1"></div><div class="jugador" indice="10" pos="1" x="1" y="1"></div><div id="ball" class="balon" indice="12" pos="12" x="6" y="6"></div>
+			<div class="flechacopy" id="flechacopyn" style="background: url(http://en3.strikermanager.com/img/flechacopyn.png);"></div>
+			<div class="flechacopy" id="flechacopys" style="background: url(http://en3.strikermanager.com/img/flechacopys.png);"></div>
+			<div class="flechacopy" id="flechacopye" style="background: url(http://en3.strikermanager.com/img/flechacopye.png);"></div>
+			<div class="flechacopy" id="flechacopyw" style="background: url(http://en3.strikermanager.com/img/flechacopyw.png);"></div>	</div>
+</div>
+	
+<div class="fl" style="width: 370px; margin-right: 20px;">
+
+	<div class="caja50" style="height: auto; margin-bottom: 0;"><div class="tl"><div class="tr"><div class="br"><div class="bl">
+	<table class="corta3">
+	<tr>
+		<th>Instructions</th>
+	</tr>
+	<tr >
+			<td>
+									<span id="nombre_form">
+						<span id="nombre_form_in">Import and Export your formations below.  You can also swap player numbering.</span>
+						
+					</span>
+					<div id="nombre_form_edit" style="display: none;">
+						<a href="javascript:guardarCambios();" class="botonrojocorto" style="margin-top: 4px; float: right; margin-right: 30px;">save</a>
+						<div><input type="hidden" name="nombre" id="nombre_input" value="" onKeyPress="return disableEnterKey(event)"/></div>
+					</div>
+							</td>
+
+		</tr>	</table>
+	</div></div></div></div></div>
+	<br class="brfin">
+
+	<div class="botonesright" style="margin-right: 20px; margin-top:10px;">
+		<a id="boton_guardar" href="javascript:exportarCambios();" class="botonrojocorto">Export</a>
+		<a id="boton_guardar" href="javascript:importar();" class="botonrojocorto">Import</a>
+<a class="botonrojocorto" target="_blank" href="bookmarklet.html?javascript:(function(){var k='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';var u=function(w){var q=w.length,m=q&3;for(var i=0,j=0,z=[],f=q/4,o=0,n=[],b;i<f;++i){for(b=0;b<4;){z[b++]=k.indexOf(w[j++]||'A');}n[o++]=(z[0]<<2|z[1]>>4)&255;n[o++]=(z[1]<<4|z[2]>>2)&255;n[o++]=(z[2]<<6|z[3])&255;};return String.fromCharCode.apply(null,n).substr(0,o+m-4);};function y(r){for(var i=0,n=u(r),x=[];i<n.length;++i){var t=n.charCodeAt(i).toString(16);x.push(t.length==1?'0'+t:t);}return x.join(',');}var m=window.frames[0];m.loadTactica(y(prompt('Input minified formation')));m.setCasilla($('.balon'),3,4,false);m.mover_jugadores(3,4);})();">Bookmark 1</a><a class="botonrojocorto" target="_blank" href="/click/exportminifier.html?javascript:(function(){var t='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';var z=t.split('');a=function(n){for(var i=0,j=0,e=n.length/3,s=[];i<e;++i){var a=n.charCodeAt(j++),b=n.charCodeAt(j++),c=n.charCodeAt(j++);s[s.length]=z[a>>2]+z[((a<<4)&63)|(b>>4)]+(isNaN(b)?'=':z[((b<<2)&63)|(c>>6)])+(isNaN(b+c)?'=':z[c&63]);}return s.join('').replace(/=/g,'');};function y(r){return a(String.fromCharCode.apply(null,r.replace(/([\da-fA-F]{2}),?/g,'0x$1%20').replace(/%20+$/,'').split('%20')));}var m=window.frames[0].document.getElementById('tactica');m.innerHTML=y(m.innerHTML);})();">Bookmark 2</a>	</div>
+	
+
+	<br class="brfin">
+	<div class="caja50" style="height: auto;margin-top:50px;"><div class="tl"><div class="tr"><div class="br"><div class="bl">
+	<div class="page" style="height: 200px;">
+	<table>
+	<tr>
+		<th>Copy Formation</th>
+	</tr>
+	<tr class="tipo2"><td><tr class="tipo2"><td><a href="javascript:copiarFormacion(14);">4-3-3</a></td></tr><tr ><td><a href="javascript:copiarFormacion(13);">3-4-3 B</a></td></tr><tr class="tipo2"><td><a href="javascript:copiarFormacion(12);">3-4-3 A</a></td></tr><tr ><td><a href="javascript:copiarFormacion(11);">5-3-2</a></td></tr><tr class="tipo2"><td><a href="javascript:copiarFormacion(10);">4-4-2 B</a></td></tr><tr ><td><a href="javascript:copiarFormacion(9);">4-4-2 A</a></td></tr><tr class="tipo2"><td><a href="javascript:copiarFormacion(8);">3-5-2 C</a></td></tr><tr ><td><a href="javascript:copiarFormacion(7);">3-5-2 B</a></td></tr><tr class="tipo2"><td><a href="javascript:copiarFormacion(6);">3-5-2 A</a></td></tr><tr ><td><a href="javascript:copiarFormacion(5);">5-4-1 B</a></td></tr><tr class="tipo2"><td><a href="javascript:copiarFormacion(4);">5-4-1 A</a></td></tr><tr ><td><a href="javascript:copiarFormacion(3);">4-5-1 C</a></td></tr><tr class="tipo2"><td><a href="javascript:copiarFormacion(2);">4-5-1 B</a></td></tr><tr ><td><a href="javascript:copiarFormacion(1);">4-5-1 A</a></td></tr>	</table>
+	</div></div></div></div></div></div>
+	<br class="brfin">
+
+	<div class="texto final"></div>
+
+	<div id="log"></div>
+
+</div>
+
+
+		<input type="hidden" name="id_formacion" value="128774">
+		<input type="hidden" name="accion" value="guardar">
+		<input type="hidden" name="datos" value="">
+		<input type="hidden" name="jug1pos" value="0">
+			<input type="hidden" name="jug1x" value="0">
+			<input type="hidden" name="jug1y" value="0"><input type="hidden" name="jug2pos" value="0">
+			<input type="hidden" name="jug2x" value="0">
+			<input type="hidden" name="jug2y" value="0"><input type="hidden" name="jug3pos" value="0">
+			<input type="hidden" name="jug3x" value="0">
+			<input type="hidden" name="jug3y" value="0"><input type="hidden" name="jug4pos" value="0">
+			<input type="hidden" name="jug4x" value="0">
+			<input type="hidden" name="jug4y" value="0"><input type="hidden" name="jug5pos" value="0">
+			<input type="hidden" name="jug5x" value="0">
+			<input type="hidden" name="jug5y" value="0"><input type="hidden" name="jug6pos" value="0">
+			<input type="hidden" name="jug6x" value="0">
+			<input type="hidden" name="jug6y" value="0"><input type="hidden" name="jug7pos" value="0">
+			<input type="hidden" name="jug7x" value="0">
+			<input type="hidden" name="jug7y" value="0"><input type="hidden" name="jug8pos" value="0">
+			<input type="hidden" name="jug8x" value="0">
+			<input type="hidden" name="jug8y" value="0"><input type="hidden" name="jug9pos" value="0">
+			<input type="hidden" name="jug9x" value="0">
+			<input type="hidden" name="jug9y" value="0"><input type="hidden" name="jug10pos" value="0">
+			<input type="hidden" name="jug10x" value="0">
+			<input type="hidden" name="jug10y" value="0"><input type="hidden" name="jug11pos" value="0">
+			<input type="hidden" name="jug11x" value="0">
+			<input type="hidden" name="jug11y" value="0">	</form>
+
+			
+<div id="ventana_exportar" class="mensaje3" style="opacity: 0.5; display: block;position: absolute;top: 800px;">
+	<div class="caja3" style="width:470px;height:380px;background:url();background-color:#BFBFBF;">
+		<a style="float:right;margin-right:10px;" class="icono_pequeno_borrar" onclick="$('#ventana_exportar').css('opacity','.5');" href="#"></a> 
+		<br />
+		<div class="inside">
+			<textarea rows="20" cols="50" id="tactica" style="background-color:black;color:white;font-size:small;font-weight:bold;"></textarea>
+			<input id="pos1" style="width: 20px;" value="2"><input id="pos2" style="width: 20px;" value="3"><a class="botonrojocorto" id="minify">Minify</a><a class="botonrojocorto" id="import">Import</a><a class="botonrojocorto" id="swap">Swap Players</a>
+		</div>
+	</div>
+</div>
+
+
+	<div class="final" style="padding: 10px 0px 0px;"></div>
+	</div>
+
+<div class="mensaje2" id="mensajealerta">
+	<div class="caja3">
+		<div class="inside">
+			<img src="http://en3.strikermanager.com/img/alerta.gif">
+			<span id="textoalerta"></span>
+			<div><a class="botonrojo" href="javascript:hideAlerta();">accept</a></div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

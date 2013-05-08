@@ -1,0 +1,19 @@
+  var t = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  var z = t.split('');
+  a = function (n) {
+    for (var i = 0, j = 0, e = n.length / 3, s = []; i < e; ++i) {
+      var a = n.charCodeAt(j++), b = n.charCodeAt(j++), c = n.charCodeAt(j++);
+      s[s.length] = z[a >> 2] + z[((a << 4) & 63) | (b >> 4)] +
+                              (isNaN(b) ? '=' : z[((b << 2) & 63) | (c >> 6)]) +
+                              (isNaN(b + c) ? '=' : z[c & 63]);
+    }
+    return s.join('').replace(/=/g, '');
+  };
+
+function y(r) {
+  return a(String.fromCharCode.apply(null,
+    r.replace(/([\da-fA-F]{2}),?/g, '0x$1 ').replace(/ +$/, '').split(' '))
+  );
+}
+var m = window.frames[0].document.getElementById('tactica');
+m.innerHTML = y(m.innerHTML);

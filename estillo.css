@@ -1,0 +1,3801 @@
+/* general */
+body{
+	background: #000;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: arial, helvetica;
+	font-weight: bold;
+	font-size: 14px;
+	overflow-x: hidden;
+}
+
+body.bframe {
+	text-align: left;
+}
+
+img {
+	border: 0;
+}
+
+#corto, #linkbaner {
+	width: 1100px;
+	margin:0 auto; 
+	padding: 0px;
+	text-align: left;
+}
+
+#linkbaner 
+{
+	font-size: 1px;
+}
+
+#flotante
+{
+	position: absolute;
+	width: 1000px;
+	background: url('http://en3.strikermanager.com/img/as/header.png') no-repeat;
+}
+
+
+#contenido {
+	margin: 0px 0px 0px 0px;
+	width: 785px;
+	float: left;
+}
+
+#barra {
+	background: url('http://en3.strikermanager.com/img/new/barra.jpg') 50% 0px no-repeat;
+	height: 9px;
+	margin: 14px 0px 0px;
+}
+
+#logos
+{
+	margin: 5px 0px;
+	text-align: center;
+}
+
+.nobold
+{
+	font-weight: normal;
+}
+
+/* ------------ cabecera -------------- */
+#header {
+	height: 78px;
+}
+
+#cabecera {
+	margin: 0px 0px 0px 0px;
+	background: url('http://en3.strikermanager.com/img/as/subheader.png') 0px 0px no-repeat;
+	height: 68px;
+}
+
+#logoflotante {
+	position: absolute;
+	margin-left: 0px;
+	margin-top: 10px;
+}
+
+#logoas {
+	float: right;
+	margin-top: 3px;
+	margin-right: 10px;
+}
+
+#banner {
+	margin: 0 0 0 25px;
+	padding: 5px 0 0;
+}
+
+#noticiarss
+{
+	height: 16px;
+	width: 600px;
+	margin-left: 400px;
+	overflow: hidden;
+	position: absolute;
+	top: 90px;
+	color: #000;
+	font-size: 12px;
+}
+
+#noticiarss a
+{
+	color: #000;
+	font-style: italic;
+	font-weight: normal;
+
+}
+
+#noticiarss a:hover
+{
+	color: #f00;
+}
+
+/* ------------ boton inicio -------------- */
+#cabecera #inicio
+{
+	float: left;
+	width: 260px;
+	margin-top: 20px;
+}
+
+#cabecera #inicio a {
+	display: block;
+	padding: 5px 8px;
+	margin: 0;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	color: #fff;
+	font-weight: normal;
+	text-transform: uppercase;
+	float: left;
+	border-left: 1px solid #bbb;
+	text-shadow: #555 0px 1px 3px;
+}
+
+#cabecera #inicio a.iniciosinborde
+{
+	border-left: none;
+}
+
+#cabecera #inicio a:hover {
+	color: #f9b352;
+}
+
+/* ------------ proximo partido -------------- */
+#headproxpart {
+	float: left;
+	width:122px;
+	height: 43px;
+	background: url('http://en3.strikermanager.com/img/as/proxpart.png') no-repeat;
+	text-align: center;
+	font-family: arial, helvetica;
+	font-weight: bold;
+	font-size: 38px;
+	color: #fff;
+	line-height: 43px;
+	text-shadow: #000 0px 1px 3px;
+}
+
+.verde3 {
+	font-weight: bold;
+	color: #ff9000;
+}
+
+.escudet {
+	float: left;
+}
+
+#fechapart
+{
+	padding: 3px 0px;
+}
+
+.titulin {
+	font-family: arial, helvetica;
+	font-weight: normal;
+	font-size: 12px;
+	float: left;
+	width: 575px;
+	text-align: center;
+	color: #C3C3C3;
+}
+
+.proximopart {
+	font-size: 17px;
+	font-weight: bold;
+	font-style: italic;
+	color: #000;
+	height: 22px;
+}
+
+.nombreequipo1,.nombreequipo2 {
+	float: left;
+	width: 163px;
+	text-align: right;
+	margin: 0px 0px 0px;
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	font-family: arial, helvetica;
+	color: #fff;
+	padding: 10px 10px;
+	white-space: nowrap;
+}
+
+.nombreequipo2 {
+	text-align: left;
+}
+
+/* ------------ reloj -------------- */
+#reloj {
+	width: 146px;
+	height: 66px;
+	float: right;
+	font-weight: bold;
+	text-align: center;
+}
+
+#fecha {
+	font-family: arial, helvetica;
+	font-weight: normal;
+	font-size: 12px;
+	text-align: center;
+	color: #c3c3c3;
+	line-height: 20px;
+	height: 25px;
+}
+
+#hora {
+	overflow: hidden;
+	text-align: center;
+	font-family: arial, helvetica;
+	font-weight: bold;
+	font-size: 38px;
+	color: #fff;
+	text-shadow: #000 0px 1px 3px;
+}
+
+/* ------------ menu -------------- */
+#menuizquierdo {
+	float: left;
+	width: 211px;
+	height: 583px;
+	margin: 0px;
+	background: url('http://en3.strikermanager.com/img/as/menu3.jpg') 0px 0px no-repeat;
+}
+
+#menuizquierdo #inside {
+	margin-left: 7px;
+	margin-top: 20px;
+	height: 502px;
+	width: 164px;
+	padding: 0px 0px;
+}
+
+#headmenu {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -0px -0px no-repeat;
+	padding: 10px 5px;
+	height: 228px;
+	width: 151px;
+	overflow: hidden;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	color: #6e6e6e;
+}
+
+
+#headmenu ul, #headmenu ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#headmenu ul li {
+	padding: 0;
+	float: left;
+	width: 27px;
+	height: 22px;
+	padding: 4px 5px 3px;
+}
+
+#headmenu ul {
+	height: 29px;
+	margin-top: 5px;
+}
+
+#headmenu ul li.selected
+{
+	width: 27px;
+	background: url(http://en3.strikermanager.com/img/menu2.png) -0px -248px no-repeat;
+	border: none;
+	padding: 4px 6px 3px 7px;
+}
+
+.menu {
+	display: none;
+}
+
+.menu div.tit
+{
+	text-transform: capitalize;
+	color: #101010;
+	padding: 6px 4px 2px;
+	text-align: left;
+	font-weight: normal;
+}
+
+
+.menu div a
+{
+	display: block;
+	padding: 5px 7px;
+	border-bottom: 1px dotted #191919;
+	text-align: left;
+	font-weight: normal;
+	color: #ddd;
+	font-size: 13px;
+	text-shadow: #555 0px 1px 3px;
+}
+
+.menu div a:hover {
+	outline:none;
+	color: #f9b352;
+}
+
+
+.menupers {
+	padding-top: 16px;
+}
+
+a.icono1, a.icono2, a.icono3, a.icono4
+{
+	display: block;
+	width: 27px;
+	height: 22px;
+	cursor: pointer;
+}
+
+a.icono1 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -40px -248px no-repeat;
+}
+
+li.selected a.icono1 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -67px -248px no-repeat;
+}
+
+a.icono2 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -94px -248px no-repeat;
+}
+
+li.selected a.icono2 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -121px -248px no-repeat;
+}
+
+a.icono3 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -0px -277px no-repeat;
+}
+
+li.selected a.icono3 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -27px -277px no-repeat;
+}
+
+a.icono4 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -54px -277px no-repeat;
+}
+
+li.selected a.icono4 {
+	background: url(http://en3.strikermanager.com/img/menu2.png) -81px -277px no-repeat;
+}
+
+.secmenu {
+	height: 49px;
+	width: 185px;
+	margin: 0px 0px 7px;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	color: #fff;
+}
+
+#conectados, #salaschat
+{
+	font-family: arial, helvetica;
+	font-size: 12px;
+	color: #fff;
+	padding: 1px 0px 0px 20px;
+	background: url('http://en3.strikermanager.com/img/as/online.png') 0px 3px no-repeat;
+	cursor: pointer;
+}
+
+#menuconectados
+{
+	background: #000;
+	position: absolute;
+	top: 623px;
+	height: 25px;
+	width: 173px;
+	left: 2px;
+	border-top: 2px solid #e7e7e7;
+	border-left: 2px solid #e7e7e7;
+	border-right: 2px solid #e7e7e7;
+	display: none;
+	overflow: hidden;
+}
+
+#menuconectados .botonrojolargo
+{
+	margin: 2px 30px 0px;
+	text-transform: none;
+}
+
+#menuconectados ul, #menuconectados li
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menuconectados li
+{
+	display: block;
+	padding: 3px 3px 3px 20px;
+	font-size: 12px;
+	font-family: arial, helvetica;
+	font-weight: normal;
+	color: #fff;
+	border-bottom: 1px solid #e7e7e7;
+	background: url('http://en3.strikermanager.com/img/as/online.png') 0px 5px no-repeat;
+}
+
+
+#noticias_amigos
+{
+	font-size: 12px;
+	font-weight: normal;
+	overflow: hidden;
+}
+
+#noticias_amigos marquee
+{
+	padding: 6px 5px 5px 5px;
+}
+
+#noticias_amigos div
+{
+	white-space: nowrap;
+}
+
+#noticias_amigos div span
+{
+	margin: 0px 15px;
+}
+
+.loading
+{
+	margin: 3px 3px 0px;
+}
+
+.secmenu .escudo {
+	width: 49px;
+	height: 49px;
+	float: left;
+	margin-right: 9px;
+}
+
+.secmenu .escudo a
+{
+	display: block;
+	width: 49px;
+	height: 49px;
+}
+
+.secmenu .secdatos
+{
+	height: 49px;
+	float: left;
+}
+
+.secmenu .camiseta
+{
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin-right: 3px;
+	margin-top: 3px;
+}
+
+.secmenu .camiseta a
+{
+	display: block;
+	width: 15px;
+	height: 15px;
+}
+
+#caja1
+{
+	background: #f00;
+	width: 200px;
+	height: 30px;
+	position: absolute;
+}
+
+#caja2
+{
+	background: #0f0;
+	width: 200px;
+	height: 50px;
+	position: absolute;
+}
+
+#nuevomens
+{
+	border: 2px solid #fff;
+	background: #000 url('http://en3.strikermanager.com/img/as/sobre.png') 3px 5px no-repeat;
+	text-transform: uppercase;
+	position: absolute;
+	width: 133px;
+	color: #fff;
+	font-size: 12px;
+	padding: 10px 5px 4px 40px;
+	overflow: hidden;
+	margin-top: 0px;
+	height: 0px;
+	display: none;
+	opacity: 0;
+}
+
+#nuevochat
+{
+	border: 2px solid #fff;
+	background: #000 url('http://en3.strikermanager.com/img/as/chat.png') 3px 5px no-repeat;
+	text-transform: uppercase;
+	position: absolute;
+	width: 133px;
+	color: #fff;
+	font-size: 12px;
+	padding: 10px 5px 4px 40px;
+	overflow: hidden;
+	margin-top: 0px;
+	height: 0px;
+	display: none;
+	opacity: 0;
+}
+
+#nuevochat a, #nuevochat a:hover
+{
+	color: #fff;
+}
+
+
+#mensajitos
+{
+	position: absolute;
+}
+
+
+/* ------------ scroll -------------- */
+.jScrollPaneContainer {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.jScrollPaneTrack {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 11px;
+}
+.jScrollPaneDrag {
+	position: absolute;
+	background: url('http://en3.strikermanager.com/img/as/gmid.gif') 1px 0px  repeat-y;
+	cursor: pointer;
+	overflow: hidden;
+}
+.jScrollPaneDragTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	background: url('http://en3.strikermanager.com/img/as/gtop.gif') 1px 0px no-repeat;
+	height: 4px;
+}
+.jScrollPaneDragBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	background: url('http://en3.strikermanager.com/img/as/gbot.gif') 1px 0px no-repeat;
+	height: 4px;
+}
+a.jScrollArrowUp {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url('http://en3.strikermanager.com/img/as/ftopscr.gif');
+	height: 9px;
+}
+a.jScrollArrowUp:hover {
+}
+
+a.jScrollArrowDown {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url('http://en3.strikermanager.com/img/as/fbotscr.gif');
+	height: 9px;
+}
+a.jScrollArrowDown:hover {
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+}
+
+/* ------------ inicio -------------- */
+.iniciocaja1, .iniciocaja2
+{
+	float: left;
+	padding: 0px;
+	margin: 0;
+	color: #000;
+	width: 274px;
+	height: 182px;
+}
+
+.iniciocaja2 h4 a
+{
+	float: right; 
+	margin-right: 10px;
+}
+
+.fs13
+{
+	font-size: 13px;
+}
+
+.iniciocaja2 .fs13 div.tipopartido
+{
+	float: right; 
+	margin-right: 20px;
+}
+
+div.fechapartido
+{
+	margin-left: 20px; 
+	text-align: left; 
+	overflow: hidden; 
+	width: 120px;
+	height: 18px;
+}
+
+.iniciocaja2 a.botonrojolargo
+{
+	float: right; 
+	margin: 0px 20px 0px 0px;
+}
+
+.iniciocaja1
+{
+	margin-right: 19px;
+	background: url('http://en3.strikermanager.com/img/as/iniciocaja1.png');
+}
+
+.iniciocaja2
+{
+	background: url('http://en3.strikermanager.com/img/as/iniciocaja2.png');
+}
+
+.iniciocaja1 .caja2, .iniciocaja2 .caja2 {
+	margin: 0;
+}
+
+
+#contenido3 div.centrado2
+{
+	margin: 0;
+}
+
+#menu li, .ultimoresult, .proxpart {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.ultimoresult {
+	padding: 5px 10px 0px;
+}
+
+.ultimoresult li {
+	margin: 0px 0px 4px 34px;
+	width: 188px;
+}
+
+.proxpart li  {
+	margin: 0px 0px 10px 9px;
+	width: 247px;
+}
+
+.nequipo {
+	width: 144px;
+}
+
+.result {
+	width: 36px;
+	text-align: center;
+	float: right;
+}
+
+.proxpart {
+	padding: 5px 10px 0px;
+	margin-bottom: 10px;
+}
+
+.proxpart .escudo2 {
+	width: 75px;
+	height: 55px;
+}
+
+.proxpart .escudo2 .caja img
+{
+	margin-top: 6px;
+}
+
+.proxpart .caja {
+	text-align: center;
+	height: 55px;
+	line-height: 18px;
+}
+
+.ultimoresult .caja {
+	height: 16px;
+}
+
+
+.proxpart .resumen {
+	float: right;
+	width: 156px;
+	height: 55px;
+	margin-right: 12px;
+}
+
+/* ------------ empleados -------------- */
+.cajaempleados {
+	float: left;
+	width: 537px;
+	height: 317px;
+	background: url('http://en3.strikermanager.com/img/as/cajaempleados.png') no-repeat;
+	margin-top: 9px;
+	padding: 0px 15px;
+}
+
+.cajaempleados ul, .cajaempleados ul li
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.cajaempleados ul li
+{
+	display: block;
+	clear: both;
+}
+
+.cajaempleados ul li div.barraempleado
+{
+	font-size: 12px;
+	line-height: 18px;
+	display: block;
+	height: 21px;
+	cursor: pointer;
+	margin: 0px;
+	width: 479px;
+	padding: 0px;
+	padding-left: 55px;
+	background: url('http://en3.strikermanager.com/img/as/barra_cerrada.gif') no-repeat;
+	overflow: hidden;
+	outline: none;
+	text-transform: capitalize;
+}
+
+.cajaempleados li.selected div.barraempleado
+{
+	background: url('http://en3.strikermanager.com/img/as/barra_abierta.gif') no-repeat;
+}
+
+.cajaempleados ul li.disabled div.barraempleado
+{
+	color: #aeaeae;
+	background: url('http://en3.strikermanager.com/img/as/barra_disabled.gif') no-repeat;
+}
+
+.cajaempleados ul li div.barrafin
+{
+	width: 252px;
+	text-align: center;
+	color: #ffc600;
+	float: right;
+	height: 20px;
+}
+
+.cajaempleados ul li.disabled div.barrafin
+{
+	color: #aeaeae;
+}
+
+
+.visorempleado {
+	width: 520px;
+	height: 70px;
+	overflow: hidden;
+	font-size: 11px;
+}
+
+.finalempleado
+{
+	clear: both;
+	height: 4px;
+}
+
+.cajonempleado {
+	width: 5000px;
+	height: 70px;
+}
+.mensempleado {
+	width: 520px;
+	height: 70px;
+	float: left;
+}
+
+.contamensajes
+{
+	width: 440px;
+	color: #ffc600;
+	float: left;
+	font-size: 11px;
+	margin-bottom: 4px;
+}
+
+.contamensajes div
+{
+	float: left;
+	color: #ffc600;
+}
+
+.contamensajes a
+{
+	display: block;
+	float: left;
+	margin: 0px 5px;
+	padding-top: 1px;
+	cursor: pointer;
+}
+
+.contamensajes a.botonrojocorto
+{
+	float: right;
+	margin: 0px 3px;
+	padding-top: 0px;
+}
+
+.textoempleado
+{
+	float: left;
+	height: 31px;
+	width: 440px;
+	overflow: hidden;
+	margin-bottom: 3px;
+}
+
+.sublink a.botonrojolargo {
+	float: right;
+	text-transform: none;
+}
+
+.ui-accordion li .ui-accordion-right {
+	display: none;
+}
+.ui-accordion li .ui-accordion-left {
+	display: none;
+}
+
+.cajaempleados ul li div.empleadoav
+{
+	background: url('http://en3.strikermanager.com/img/as/empleados_bg.png') 0px 0px no-repeat;
+	width: 520px;
+	height: 74px;
+	padding: 7px;
+	margin: 0px;
+	display: block;
+	font-size: 12px;
+}
+
+.cajaempleados ul li div.empleadoav img.fotoempleado
+{
+	float: left;
+	width: 68px;
+	height: 68px;
+	margin-right: 7px;
+}
+
+.cajaempleados div.fin
+{
+	background: url('http://en3.strikermanager.com/img/as/empleados_fin.png') 0px 0px no-repeat;
+	width: 534px;
+	height: 9px;
+	margin: 0px 0px 0px;
+	clear: both;
+}
+
+/* ------------ columna derecha -------------- */
+.cajanoticias {
+	width: 155px;
+	height: 361px;
+	background: url('http://en3.strikermanager.com/img/as/noticias.png') no-repeat;
+	padding: 5px 0px 0px;
+	margin-bottom: 14px;
+}
+
+.pad1 {
+	padding: 8px 10px 1px;
+}
+
+#columnaderecha div.caja {
+	padding: 4px;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: left;
+	margin-bottom: 8px;
+	height: 92px;
+	overflow: hidden;
+}
+
+div.caja h6 {
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 1px solid #900;
+	padding: 0px 0px 2px;
+	margin: 0px 0px 2px;
+}
+
+h5 {
+	background: url('http://en3.strikermanager.com/img/as/ultima_hora.png') no-repeat;
+	color: #fff;
+	font-family: helvetica, arial;
+	text-decoration: none;
+	text-align: center;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding:  2px 0px 0px;
+	display: block;
+	height: 19px;
+	width: 139px;
+	font-weight: bold;
+	margin: 0px 8px 0px;
+}
+
+
+.texto2 {
+	margin: 0px 43px 0px 44px;
+}
+
+.texto2 div.centrado2 {
+	display: block;
+	margin-bottom: 3px;
+}
+
+.texto2 .caja {
+}
+
+.cajaforo {
+	float: left;
+	width: 586px;
+	height: 252px;
+	background: url('http://en3.strikermanager.com/img/new/fondomensajes.png') no-repeat;
+	margin-top: 22px;
+}
+
+.cajaforo h4 {
+	color: #fff;
+}
+
+.cajaforo table{
+	margin: 0px 10px;
+}
+
+.cajaforo tr, .cajaforo td {
+	border: none;
+}
+
+#contenido3 {
+	margin: 0px 0px 0px 20px;
+	padding: 0;
+}
+
+#contenido3 .sep1 {
+	margin: 0px 0px 0px;
+	padding: 0;
+}
+#contenido3 .ultima {
+	margin-right: 0px;
+}
+#contenido4 {
+	margin: 40px 150px;
+}
+
+#contenidocentral {
+	margin: 0px 10px 0px 0px;
+	width: 595px;
+	float: left;
+}
+
+#columnaderecha {
+	margin: 0px;
+	width: 166px;
+	float: left;
+}
+
+h1 {
+	color: #fff;
+	font-family: helvetica, arial;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	margin: 0px 0px 3px;
+	margin-bottom: 10px;
+}
+
+h2 {
+	color: #fff;
+	font-family: arial, helvetica;
+	text-decoration: none;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-align: left;
+	margin: 0px 0px 5px;
+	display: block;
+	border-bottom: 1px solid #f02425;
+	background: url('http://en3.strikermanager.com/simulacion/sliderbg.png') no-repeat;
+	height: 20px;
+	line-height: 20px;
+	padding: 0px 0px 0px 30px;
+}
+
+h2 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+h3 {
+	color: #fff;
+	font-family: arial, helvetica;
+	font-style: italic;
+	text-decoration: none;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding: 0px 0px 10px 0px;
+	text-align: center;
+	display: block;
+	margin: 0;
+}
+
+h4 {
+	color: #000;
+	font-family: helvetica, arial;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding: 4px 0px 0px 0px;
+	display: block;
+	margin: 0;
+}
+
+h4.sinmargin
+{
+	padding: 0;
+	clear: both;
+}
+
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#plantilla tbody
+{
+	background: url('http://en3.strikermanager.com/img/new/bgtable.png') 0px 20px;
+}
+
+th {
+	background: url('http://en3.strikermanager.com/img/new/th.gif') 0px 22px repeat-x; /*18*/
+	color: #000;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 0px 10px 8px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#talineacion td {
+	padding: 1px 4px 1px;
+}
+
+th.numerico, .centrado2 {
+	text-align: center;
+}
+
+.centrado2  {
+	font-size: 13px;
+}
+th.minimo {
+	width: 10px;
+	padding: 0px;
+}
+
+
+td.situacion {
+	color: #0c0;
+}
+
+tr td {
+	color: #111;
+	font-family: arial, helvetica;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 1px 3px;
+	vertical-align: top;
+}
+
+table a, div.caja50 div.texto a {
+	color: #1A5B17;
+}
+
+table a:hover, div.caja50 div.texto a:hover {
+	color: #e94141;
+}
+
+#page {
+	height: 388px;
+	overflow: hidden;
+}
+
+.rowmouseover td, td.media {
+	background: url('http://en3.strikermanager.com/img/new/classverde.png');
+}
+
+.economia {
+}
+
+.economia td.subtit {
+	font-size: 8px;
+}
+
+.rowselected td {
+	background: url('http://en3.strikermanager.com/img/new/classrojo.png');
+}
+
+td.borde {
+	border-right: 3px solid #000;
+}
+
+.naranja {
+	color: #feb537;
+}
+td.equipo {
+	width: 220px;
+	overflow: hidden;
+}
+
+td.equipo2 {
+	width: 100px;
+	overflow: hidden;
+}
+
+td.jugador, td.titulo {
+}
+
+th.titulo {
+	width: 150px;
+	text-align: left;
+}
+
+
+th.jugador {
+	width: 300px;
+	text-align: left;
+}
+
+td.numerico {
+	text-align: right;
+	padding-right: 5px;
+}
+
+td.numerico2 {
+	text-align: right;
+	padding-right: 5px;
+}
+
+td.numerico3 {
+	text-align: center;
+	padding: 0px 20px;
+}
+
+
+.plantilla TD.numerico {
+}
+
+
+.rojo {
+	color: #c11;
+}
+
+.rojo2 {
+	color: #e33;
+}
+
+.amarillo {
+	color: yellow;
+}
+
+.verde {
+	color: #1D671A;
+}
+
+.verdeclaro {
+	color: #4DA74A;
+}
+
+div.top50 {
+	background: url('http://en3.strikermanager.com/img/new/top.gif') 0px 0px no-repeat;
+	height: 8px;
+	padding-left:0px;
+}
+
+div.bottom50 {
+	background: url('http://en3.strikermanager.com/img/new/bottom.gif') 0px 0px no-repeat;
+	height: 9px;
+	margin-bottom: 30px;
+}
+
+div.nobottom50 {
+	background: url('http://en3.strikermanager.com/img/new/bottom.gif') 100% 0% no-repeat;
+	width: 100%;
+	height: 9px;
+	margin-left: 30px;
+}
+
+div.notop50
+{
+	background: url('http://en3.strikermanager.com/img/new/top.gif') 100% 0% no-repeat;
+	height: 8px;
+	width: 100%;
+	margin-left: 30px;
+}
+
+div.notop51
+{
+	background: url('http://en3.strikermanager.com/img/new/notop51.gif') 100% 0% no-repeat;
+	height: 8px;
+}
+
+
+div.top500 {
+	background: url('http://en3.strikermanager.com/img/new/top500.gif') 0px 0px no-repeat;
+	width: 500px;
+	height: 8px;
+}
+
+div.top360 {
+	background: url('http://en3.strikermanager.com/img/new/top360.gif') 0px 0px no-repeat;
+	width: 370px;
+	height: 8px;
+}
+
+div.top438 {
+	background: url('http://en3.strikermanager.com/img/new/top438.gif') 0px 0px no-repeat;
+	width: 438px;
+	height: 8px;
+}
+
+div.top586 {
+	background: url('http://en3.strikermanager.com/img/new/top586.gif') 0px 0px no-repeat;
+	width: 586px;
+	height: 8px;
+}
+
+
+div.bottom500 {
+	background: url('http://en3.strikermanager.com/img/new/bottom500.gif') 0px 0px no-repeat;
+	width: 500px;
+	height: 9px;
+	margin-bottom: 30px;
+}
+
+div.bottom360 {
+	background: url('http://en3.strikermanager.com/img/new/bottom360.gif') 0px 0px no-repeat;
+	width: 370px;
+	height: 9px;
+	margin-bottom: 10px;
+}
+
+div.bottom438 {
+	background: url('http://en3.strikermanager.com/img/new/bottom438.gif') 0px 0px no-repeat;
+	width: 438px;
+	height: 9px;
+	margin-bottom: 10px;
+}
+
+div.bottom586 {
+	background: url('http://en3.strikermanager.com/img/new/bottom586.gif') 0px 0px no-repeat;
+	width: 586px;
+	height: 9px;
+	margin-bottom: 30px;
+}
+
+
+div.bottom501 {
+	background: url('http://en3.strikermanager.com/img/new/bottom501.gif') 0px 0px no-repeat;
+	width: 500px;
+	height: 9px;
+	margin-bottom: 30px;
+}
+
+div.caja50 {
+	background: #fff url('http://en3.strikermanager.com/img/as/fondocaja.jpg') 0px 0px repeat-x;
+	padding: 0px;
+	margin-bottom: 10px;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.7); 
+	-webkit-box-shadow:0px 0px 10px rgba(0,0,0,0.7); 
+	-moz-box-shadow:0px 0px 10px rgba(0,0,0,0.7);
+}
+
+div.caja50 .texto
+{
+	color: #000; 
+	padding: 30px 0px; 
+	font-size: 13px;
+}
+
+.empleado div.caja50
+{
+	margin-bottom: 0;	
+}
+div.caja {
+	background: #000;
+	border: 1px solid #fd0a0a;
+	padding: 2px;
+	text-align: center;
+	color: #fff;
+}
+
+.camiseta_login div.caja {
+	width: 70px;
+	float:left;
+	border: 1px solid #fff;
+	padding: 0;
+	height: 24px;
+	margin: 11px 0px 0px 0px;
+}
+
+div.caja2 {
+	border-top: 2px solid #c7c7c7;
+	background: #1f1f1f url('http://en3.strikermanager.com/img/as/fons01.png') 0px 0px repeat-x;
+	padding: 10px 2px;
+	margin: 10px 0px;
+	border-bottom: 2px solid #c7c7c7;
+}
+
+div.caja2 form 
+{
+}
+
+#columnaderecha div.caja2 {
+	background: url('http://en3.strikermanager.com/img/as/caja2bg.png') 0% 100% repeat-x;
+	width: 148px;
+	height: 252px;
+	border: 0;
+	margin: 8px 6px 0px;
+}
+
+
+div.caja2 td {
+	background: transparent;
+	border: none;
+}
+
+div.caja2 th {
+	background: transparent;
+	border: none;
+	padding-bottom: 10px;
+	color: #fff;
+}
+
+div.caja2 table {
+	border: none;
+}
+
+
+div.caja3 {
+	background: #f00 url('http://en3.strikermanager.com/img/caja3_bg.gif') 0px 0px repeat-x;
+	border: 2px solid #900;
+	padding: 4px 2px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+	-moz-background-clip: padding;
+}
+
+div.caja3 .inside, div.caja2 .inside {
+	padding: 10px 20px;
+}
+
+div.caja3 img {
+	float: left;
+	padding-right: 20px;
+}
+
+div.caja3 .inside div {
+	margin: 20px 60px 40px;
+}
+
+.sep1 {
+	margin-bottom: 80px;
+}
+
+.sep2 {
+	margin-bottom: 20px;
+}
+
+.sep3 {
+	margin-bottom: 60px;
+}
+
+.sep4 {
+	margin-top: 20px;
+}
+
+#columnaderecha .sep4 {
+	margin-top: 4px;
+}
+
+.sep5 {
+	margin: 30px 0px 0px;
+}
+
+.sep6 {
+	margin: 0px 0px 10px;
+}
+
+.formerror {
+	margin: 10px 10px 0px;
+	color: #f00;
+}
+
+.centrado {
+	text-align: center;
+	font-style: italic;
+	font-size: 20px;
+}
+
+.datos {
+	width: 160px;
+	margin: 0 auto;
+	padding: 0px 0px 10px;
+	text-align: center;
+}
+
+.datos2 {
+	width: 160px;
+	margin: 0 auto;
+	padding: 0px 0px 30px;
+	text-align: center;
+}
+
+
+.final {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+.despsel {
+	width: 202px;
+	height: 19px;
+	background: url('http://en3.strikermanager.com/img/as/bgselecttac.png') 0px 0px no-repeat;
+	margin: 0px;
+	padding: 0px;
+}
+
+#formactual 
+{
+	width: 158px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	height: 19px;
+	text-align: center;
+	line-height: 19px;
+}
+
+.desp {
+	width: 44px;
+	height: 19px;
+	text-align: center;
+	line-height: 19px;
+	margin-right: 0px;
+	float: right;
+}
+
+
+.desp a
+{
+	display: block;
+	width: 44px;
+	height: 19px;
+}
+
+a {
+	text-decoration: none;
+	color: #EAC102;
+	-moz-outline-style: none;
+	outline: none;
+}
+
+#campo {
+	width: 200px;
+	height: 275px;
+	background: url('http://en3.strikermanager.com/img/campo.jpg');
+	margin: 3px 0px 30px;
+	position: absolute;
+}
+
+#campog {
+	width: 327px;
+	height: 450px;
+	background: url('http://en3.strikermanager.com/img/new/campog.jpg');
+	position: absolute;
+	overflow: hidden;
+}
+
+
+.puntito {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	background: #fff;
+	display: none;
+	font-size: 1px;
+	overflow: hidden;
+}
+
+.numcampo2 {
+	position: absolute;
+	font-size: 20px;
+	line-height: 54px;
+	width: 50px;
+	height: 54px;
+	text-align: center;
+	display: none;
+	cursor: pointer;
+}
+
+.eq1 {
+	background: url('http://en3.strikermanager.com/img/chapa01.png') no-repeat;
+}
+
+.eq2 {
+	background: url('http://en3.strikermanager.com/img/chapa02.png') no-repeat;
+}
+
+.pel {
+	background: url('http://en3.strikermanager.com/img/pelota.png') no-repeat;
+}
+
+
+.numcampo{
+	position: absolute;
+	font-size: 22px;
+	width: 40px;
+	text-align: center;
+	background: url('http://en3.strikermanager.com/img/numcampobg.png') no-repeat;
+}
+
+.numcampo span.posicion {
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	float: none;
+}
+
+.formaciones {
+	width: 150px;
+	background: #000;
+	position: absolute;
+	padding: 0px 0px;
+	text-align: center;
+	display: none;
+}
+
+.desplegablealineados img
+{
+	cursor: pointer;
+}
+
+.alineados
+{
+	background: url('http://en3.strikermanager.com/img/as/talineados.png') no-repeat;
+	width: 278px;
+	height: 211px;
+	position: absolute;
+	padding: 15px;
+	display: none;
+	z-index:999;
+}
+
+
+.tminutos
+{
+	background: url('http://en3.strikermanager.com/img/as/tminutos.png') no-repeat;
+	width: 60px;
+	height: 52px;
+	position: absolute;
+	padding: 15px;
+	display: none;
+	z-index:999;
+}
+
+
+#formaciones{
+	width: 156px;
+	height: 288px;
+	background: url('http://en3.strikermanager.com/img/as/formaciones.png') 0% 100% no-repeat;
+	position: absolute;
+	padding: 3px 3px;
+	text-align: center;
+	/*display: none;*/
+}
+
+.formaciones_secc {
+	width: 153px;
+	height: 17px;
+	background: url('http://en3.strikermanager.com/img/as/form_secc_bg.png');
+	color: #fff;
+	line-height: 17px;
+	text-align: center;
+	margin-bottom: 3px;
+	clear: both;
+}
+
+.forma {
+	width: 74px;
+	background: url('http://en3.strikermanager.com/img/as/form_bg.png') no-repeat;
+	color: #fff;
+	line-height: 16px;
+	height: 16px;
+	text-align: center;
+	float: left;
+	margin: 0px 1px 2px;
+}
+
+
+.datoscambio {
+	margin-top: 290px;
+	width: 200px;
+	background: url('http://en3.strikermanager.com/img/as/datoscambio.png') no-repeat;
+	padding-top: 20px;
+	padding-left: 4px;
+}
+
+.datoscambio TD{
+	padding: 0px 1px;
+	border-bottom: none;
+	border-top: none;
+}
+
+.datoscambio TH 
+{
+	border: none;
+}
+
+.datoscambio TD.tdborder
+{
+	border: none;
+	background: url('http://en3.strikermanager.com/img/tdborder.gif') 0px 0px repeat-y;
+}
+
+.datoscambio TH.first, .datoscambio TH.last, .datoscambio TH.bottomfirst, .datoscambio TH.bottomlast, .datoscambio TH
+{
+	border: none;
+	padding: 0;
+}
+
+.plantilla TD.noborder {
+	border-right: none;
+}
+
+
+.datoscambio TD.noborder {
+	border-left: none;
+}
+
+.datoscambio TD.borderight {
+	border-left: none;
+}
+
+.datoscambio TD.celda1, .datoscambio TH.celda1 {
+	width: 37px;
+}
+
+.datoscambio TD.celda2, .datoscambio TH.celda2 {
+	width: 25px;
+	padding: 0px 0px 0px 1px;
+}
+
+.datoscambio th {
+	height: 34px;
+	border: 0;
+	color: #fff;
+	background: none;
+}
+
+.datoscambio TD.celda3 {
+	width: 22px;
+	padding: 0px 0px 0px 0px;
+}
+
+#campog2 {
+	width: 367px;
+	height: 505px;
+	background: url('http://en3.strikermanager.com/img/as/campog2.jpg') no-repeat;
+	position: absolute;
+}
+
+td.ccc{
+	width: 37px;
+	height: 55px;
+	vertical-align: top;
+}
+.campop {
+	width: 37px;
+	height: 50px;
+	background: url('http://en3.strikermanager.com/img/new/campop.jpg');
+	margin: 5px 0px 5px 2px;
+	position: absolute;
+}
+
+
+a.boton, a.botonoro {
+	display: block;
+	padding: 0;
+	width:152px;
+	height: 23px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -69px no-repeat;
+	text-align: center;
+	line-height: 23px;
+	text-transform: capitalize;
+	float: left;
+	margin: 0px 5px 7px;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: #000 0px 1px 3px;
+}
+
+
+
+a.botonoro
+{
+	padding-left: 10px;
+	width: 142px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -161px no-repeat;
+	float: right;
+}
+
+a.botonoro span {
+	display: block;
+	width: 15px;
+	text-align: right;
+	float: right;
+	color: yellow;
+	padding: 0px 30px 0px 0px;
+}
+
+.botones a.botonoro
+{
+	float: left;
+}
+
+.container_oro{width:162px; float: right;}
+.botones .container_oro{float: left;}
+.hover_oro{
+	position:absolute;
+	display:none;
+	z-index:999;
+	width:214px;
+	height:74px; 
+	font-size: 11px;
+	background: url('http://en3.strikermanager.com/img/as/hoveroro.png') no-repeat;
+	text-transform: none;
+}
+.hover_oro p{margin:8px 8px 8px;text-align:center; color:#000; display: block;}
+
+a.botoncorto, a.botonmascorto {
+	display: block;
+	padding: 0;
+	width:121px;
+	height: 23px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -92px no-repeat;
+	text-align: center;
+	line-height: 23px;
+	text-transform: capitalize;
+	float: left;
+	margin: 0px 5px 7px;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: #000 0px 1px 3px;
+}
+
+a.botonmascorto
+{
+	width: 90px;
+	background: url(http://en3.strikermanager.com/img/botones.png) -0px -408px no-repeat;
+}
+
+a.botoncorto:hover, a.botonmascorto:hover {
+	color: #fff;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -115px no-repeat;
+}
+
+a.botonmascorto:hover
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -90px -408px no-repeat;
+}
+
+
+a.botonrojocorto, span.botonrojocortopress {
+	display: block;
+	padding: 0;
+	width: 78px;
+	height: 16px;
+	background: url(http://en3.strikermanager.com/img/botones.png) -121px -225px no-repeat;
+	text-align: center;
+	line-height: 16px;
+	text-transform: capitalize;
+	margin: 0px 3px 0px;
+	color: #fff;
+	font-size: 12px;
+	float: left;
+}
+
+span.botonrojocortopress
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -78px -243px no-repeat;
+}
+
+a.botonrojolargo {
+	display: block;
+	padding: 0;
+	width: 112px;
+	height: 17px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -259px no-repeat;
+	text-align: center;
+	line-height: 17px;
+	text-transform: capitalize;
+	margin: 0px 3px 0px;
+	color: #fff;
+	font-size: 12px;
+	float: left;
+}
+
+a.botonrojocorto:hover, a.botonrojocorto.select {
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -243px no-repeat;
+	color: #fff;
+}
+
+a.botonrojolargo:hover {
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -276px no-repeat;
+	color: #fff;
+}
+
+.botonblanco:hover {
+	color: #b00;
+}
+
+.botonblanco, .botonblanco2, .botonblanco3
+{
+	display: block;
+	padding: 0;
+	width:152px;
+	height: 23px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -46px no-repeat;
+	text-align: center;
+	line-height: 23px;
+	text-transform: capitalize;
+	float: left;
+	margin: 0px 5px 7px;
+	color: #b00;
+	font-size: 14px;
+	text-shadow: #000 0px 1px 3px;
+}
+
+.botonblanco2
+{
+	width: 121px;
+	background: url(http://en3.strikermanager.com/img/botones.png) -0px -385px no-repeat;
+}
+
+.botonblanco3
+{
+	width: 90px;
+	background: url(http://en3.strikermanager.com/img/botones.png) -121px -385px no-repeat;
+}
+
+#columnaderecha a.botonrojocorto
+{
+	margin: 10px 0px 20px 34px;
+}
+
+
+.botonespest
+{
+	float: left;
+	margin-left: 15px;
+}
+
+.botonespest .botonblanco, .botonespest .boton
+{
+	margin-bottom: 5px;
+}
+
+a.boton:hover {
+	color: #fff;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -138px no-repeat;
+}
+
+a.botonoro:hover {
+	color: #fff;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -184px no-repeat;
+}
+
+.botonesform {
+	margin: 20px 0px 10px;
+	height:	10px;
+}
+
+
+.botonesform .boton {
+	float: right;
+	margin-right: 0px;
+	margin-left: 10px;
+}
+
+div.caja input, div.caja textarea {
+	background: #000;
+	border: none;
+	padding: 0;
+	text-align: left;
+	margin: 0;
+	color: #fff;
+	font-family: arial, helvetica;
+	font-weight: bold;
+	font-size: 14px;
+	width: 100%;
+}
+
+form div.caja {
+	margin: 10px 0px;
+}
+
+.boton2 {
+	display: block;
+	width:172px;
+	height: 25px;
+	background: url('http://en3.strikermanager.com/img/boton2.gif');
+	text-align: center;
+	line-height: 25px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.botonp, .botonrojo {
+	display: block;
+	width: 121px;
+	height: 18px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -207px no-repeat;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 5px;
+	color: #fff;
+	cursor: pointer;
+	line-height: 18px;
+}
+
+table.forogen a.botonp
+{
+	color: #fff;
+}
+
+.tdboton .botonp
+{
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+.botonrojo {
+	background: url('http://en3.strikermanager.com/img/botonrojo.gif');
+	width:149px;
+}
+
+
+#botones {
+	padding-left: 140px;
+	margin-top: 20px;
+}
+
+#botones .botonp {
+	float: right;
+}
+
+
+.minicampo {
+	padding-bottom: 0;
+	padding-right: 0;
+	float: left;
+}
+
+.minicampo img {
+	margin:0;
+	padding: 0;
+	border: 0;
+}
+
+.cajaresumenjugador {
+	margin-left: 8px;
+	width: 295px;
+	float: left;
+
+}
+
+.fotojugador {
+	float: left;
+	margin: 0px 10px 0px 20px;
+}
+
+.fotoempleado {
+	margin: 0px 0px 0px 0px;
+}
+
+.fotosponsor {
+	float: left;
+	margin: 0px 10px 0px 0px;
+}
+
+.datosjugador 
+{
+	margin-left: 80px;
+	margin-top: 10px;
+}
+
+.barrajugador {
+	background: url('http://en3.strikermanager.com/img/as/barrajugador.png') no-repeat;
+	height: 23px;
+	font-size: 18px;
+	padding: 2px 20px 0px;
+	margin-bottom: 5px;
+	margin-left: 18px;
+	text-shadow: #000 0px 1px 3px;
+}
+
+.barrajugador img {
+	margin: 0px 20px;
+}
+
+.barrajugador a.botonoro
+{
+	margin-right: 47px;
+	margin-top: 3px;
+	margin-bottom: 0;
+}
+
+.resumenjugador {
+	float: left;
+	width: 222px;
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-left: 15px;
+}
+
+.resumenjugador .first2 {
+	border-left: none;
+	border-right: none;
+	width: 170px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+
+.resumenjugador .last2 {
+	background: #060 url('http://en3.strikermanager.com/img/td_bg_last2b.gif') 100% 0% no-repeat;
+	width: 40px;
+	text-align: right;
+	padding: 0;
+	padding-right: 10px;
+	color: red;
+}
+
+
+.resumenjugador .naranja {
+	color: #feb537;
+}
+.resumenjugador2 {
+	float: left;
+	margin-top: 0px;
+}
+
+.resumenjugador2 td.numerico {
+	width: 30px;
+	color: red;
+}
+
+.resumenjugador2 .corta td.lastlong {
+	width: 100px;
+}
+
+.resumenjugador2 .corta td.lastlong .balones {
+	padding-left: 20px;
+}
+
+.resumenjugador2 .corta td.first2 {
+	width: 150px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+table.corta {
+	width: 350px;
+}
+
+table.corta2 {
+	width: 450px;
+}
+
+.corta4 {
+	width: 300px;
+	margin-left: 50px;
+	margin-top: 0px;
+	float: left;
+	border: 0;
+}
+
+.corta4 th.last, .corta4 td.last2 {
+	width: 30px;
+	padding: 0px 10px 0px;
+}
+
+.corta4 td.first2 {
+	width: 200px;
+}
+
+.nombrepos {
+	width: 100px;/*350*/
+}
+
+.balones {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	padding-left: 12px;
+	width: 95px;
+	height: 17px;
+}
+
+.balones img {
+	float: left;
+	margin: 0;
+	margin-right: 1px;
+	border: 0;
+	padding: 0;
+	height: 17px;
+}
+
+.estadisticas {
+	margin-top: 0px;
+	width: 485px;
+}
+
+.estadisticas td.first2 {
+	width: 180px;
+}
+
+.estadisticas td.last2 {
+	width: 40px;
+}
+
+.estadisticas img, .fl, .plantilla img  {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+
+.estadisticas img, .plantilla img {
+	margin: 0px 4px;
+}
+
+.plantilla img  {
+}
+
+.empleado {
+	width: 387px;
+	float: left;
+	margin-right: 0px;
+	margin-bottom: 20px;
+}
+
+.empleado th 
+{
+	padding: 0px 0px 8px;
+}
+
+
+.tdboton, .tdboton img{
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+.tdboton a {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+
+.tdboton{
+	padding-left: 5px;
+}
+
+.tdboton .botonp {
+	margin-top: 0px; 
+	margin-left: 10px;
+	height: 17px;
+}
+
+.tdboton2 {
+	padding: 0px 0px 20px 10px;
+	background: transparent;
+	text-align: right;
+	border: 0;
+}
+
+.tdboton2 .botonp 
+{
+	float: right;
+}
+
+.selcentrado {
+	margin: 0px 0px 0px 320px;
+}
+
+#contenidocentral .selcentrado {
+	margin: 0px 0px 0px 225px;
+}
+
+.selector {
+	width: 116px; 
+	height: 21px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -293px no-repeat;
+	padding: 0;
+	line-height: 17px;
+}
+
+.selcentrado3
+{
+	float: left; 
+	width: 150px; 
+	margin-left: 200px;
+}
+
+.selector img {
+	float: left;
+}
+
+.selector span {
+	float: left;
+	display: block;
+	width: 92px;
+	text-align: center;
+}
+
+
+.selector2 {
+	width: 218px;
+	height: 23px;
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px 0px no-repeat;
+	padding: 0;
+	line-height: 23px;
+	color: #fff;
+}
+
+.selector2_lista
+{
+	display: none;
+}
+
+.selector2corto .selector2
+{
+	width: 143px;
+	background: url(http://en3.strikermanager.com/img/botones.png) -1px -339px no-repeat;
+}
+
+.selector2 a {
+	float: left;
+	width: 19px;
+	height: 23px;
+	display: block;
+}
+
+.selector2 a img
+{
+	display: none;
+}
+
+.selectorcopa a
+{
+	font-size: 6px;
+	width: 19px;
+	height: 23px;
+	display: block;
+}
+
+.selector2 a.fizq, .selector3 a.fizq, .selectorcopa a.fizq
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -316px no-repeat;
+}
+
+.selector2 a.fder, .selector3 a.fder, .selectorcopa a.fder
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -116px -293px no-repeat;
+}
+
+.selector2 a.fder:hover, .selector3 a.fder:hover, .selectorcopa a.fder:hover {
+	background: url(http://en3.strikermanager.com/img/botones.png) -135px -293px no-repeat;
+}
+
+.selector2 a.fizq:hover, .selector3 a.fizq:hover, .selectorcopa a.fizq:hover {
+	background: url(http://en3.strikermanager.com/img/botones.png) -19px -316px no-repeat;
+}
+
+.selector3
+{
+	/* float: left; */
+}
+
+.selector3 img
+{
+	padding: 0;
+	margin: 0;
+	width: 19px;
+	height: 23px;
+	vertical-align: top;
+}
+
+.selector2 span {
+	float: left;
+	display: block;
+	width: 180px;
+	height: 23px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.selector2corto .selector2 span {
+	width: 105px;
+}
+
+a.fabajo
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -154px -293px no-repeat;
+	font-size: 6px;
+	width: 23px;
+	height: 19px;
+	display: block;
+}
+
+a.fabajo:hover
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -177px -293px no-repeat;
+}
+
+
+a.farriba
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -38px -316px no-repeat;
+	font-size: 6px;
+	width: 23px;
+	height: 19px;
+	display: block;
+}
+
+a.farriba:hover
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -61px -316px no-repeat;
+}
+
+
+.oro .selector2 {
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -23px no-repeat;
+}
+
+.oro .selector2 a.fizq
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -122px -316px no-repeat;
+}
+
+.oro .selector2 a.fder
+{
+	background: url(http://en3.strikermanager.com/img/botones.png) -84px -316px no-repeat;
+}
+
+.oro .selector2 a.fder:hover {
+	background: url(http://en3.strikermanager.com/img/botones.png) -103px -316px no-repeat;
+}
+
+.oro .selector2 a.fizq:hover {
+	background: url(http://en3.strikermanager.com/img/botones.png) -141px -316px no-repeat;
+}
+
+
+
+#columnaderecha .selector {
+	margin: 10px 0px 0px 15px;
+}
+
+
+#tentreno {
+	cursor: pointer;
+}
+
+#tentreno td {
+	padding: 0px 10px;
+}
+
+
+#talineacion {
+	cursor: pointer;
+}
+
+.mensaje{
+	padding: 100px 200px;
+}
+
+.mensaje2 {
+	position: absolute;
+	padding: 100px 100px;
+	top: 20px;
+	display: none;
+	-moz-opacity: 0.9;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+	z-index: 1000;
+}
+
+.mensaje3 {
+	position: absolute;
+	padding: 100px 100px;
+	top: 50px;
+	display: none;
+	-moz-opacity: 0.9;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+	z-index: 1000000;
+}
+
+.mensaje2 .caja3 {
+	width: 300px;
+}
+
+
+.mensaje3 .caja3 {
+	width: 400px;
+}
+
+.mensaje3 .final 
+{
+	margin-left: 30px; 
+	height: 30px;
+}
+
+.mensaje .caja3, .mensaje2 .caja3 {
+	margin-bottom: 30px;
+}
+
+.tderecha {
+	text-align: right;
+}
+
+.tderecha .botonp {
+	float: right;
+	margin-right: 50px;
+}
+
+
+.botonp:hover, .botonpmarcado {
+	background: url(http://en3.strikermanager.com/img/botones.png) 0px -225px no-repeat;
+	color: #fff;
+}
+
+a:focus {outline:none}
+a:active {outline:none}
+a:hover, a:hover.naranja, .iniciomens a:hover, .textoempleado a:hover {
+	outline:none;
+	color: #f9b352;
+}
+
+a.naranja, .iniciomens a, .textoempleado a {
+	color: #EAC102;
+}
+
+a{
+	color: #fff;
+}
+
+.cuentas {
+	border-top: 2px solid #999;
+}
+
+.cuentas td {
+	padding: 5px 3px 5px;
+}	
+
+.barras {
+	width: 50px;/*200*/
+	margin: 2px 10px;
+	height: 10px;
+}
+
+.roja {
+	background: #f00;
+	height: 10px;
+	float: left;
+	display: none;
+}
+
+.verde2 {
+	background: #0f0;
+	height: 10px;
+	float: left;
+	display: none;
+}
+
+.mr {
+	margin-right: 20px;
+}
+
+table.corta3 {
+	width: 350px;
+
+}
+
+table.corta3 td
+{
+	font-size: 12px;
+}
+span.posicion {
+	float: right;
+}
+
+#talineacion td.numerico {
+	padding: 0px;
+}
+
+#ttactica
+{
+	border: 0;
+}
+
+#ttactica .first {
+	padding: 0px;
+	width: 25px;
+	padding-right: 5px;
+	text-align: right;
+}
+
+.texto {
+	padding: 0px 100px;
+	margin: 0px 0px 10px;
+	text-align: center;
+}
+
+.texto3 {
+	padding: 0px 30px;
+	margin: 10px 0px 10px;
+	text-align: center;
+	color: #000;
+	font-size: 13px;
+}
+
+#talineacion .nombrejugador 
+{
+	display: block; 
+	overflow: hidden;
+	height: 17px;
+	width: 150px;
+}
+
+.big{
+	font-size: 16px;
+}
+
+.centrado2 .boton {
+	display: block;
+	float: none;
+	margin: 0 auto;
+}
+
+.inside3 {
+	padding: 20px; 
+	margin-right: 200px;
+}
+
+#resumen {
+	width: 330px;
+	border: 0;
+}
+
+#resumen TD {
+	background: transparent;
+	border: 0;
+	padding: 0;
+}
+
+.minutos {
+	position: absolute;
+	width: 80px;
+	padding: 3px;
+	background: #000;
+	display: none;
+}
+
+
+#track {
+	background: url('http://en3.strikermanager.com/img/track.jpg');
+	width: 273px;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+
+#track DIV.carga {
+	background: url('http://en3.strikermanager.com/img/subtrack.jpg');
+	width: 15px;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+
+#slide {
+	background: url('http://en3.strikermanager.com/img/slide.png');
+	width: 31px;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.invert {
+	background: #ee9;
+	margin: 0px 5px;
+}
+
+.invert a {
+	color: #000;
+}
+
+div.valoracion {
+	position: absolute;
+	background: url('http://en3.strikermanager.com/img/pixcaja3.png');
+	padding: 4px;
+	font-size: 10px;
+	width: 72px;
+	height: 60px;
+	text-align: left;
+	overflow: hidden;
+	font-weight: normal;
+	text-align: center;
+}
+
+div.valoracion div.val2
+{
+	padding: 0px 0px 0px 20px;
+	background-position: 0px 2px;
+	background-repeat: no-repeat;
+	height: 38px;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.valoracion .nombrejugador
+{
+	overflow: hidden;
+	height: 12px;
+}
+
+div.valoracion div.val2 span.naranja
+{
+	font-size: 20px;
+	display: block;
+	line-height: 20px;
+}
+
+table.valoracion .balones {
+	padding: 0;
+	width: 95px;
+}
+
+table.valoracion .last2, table.valoracion .first2{
+	width: 20px;
+}
+
+table.valoracion .equipo {
+	overflow: hidden;
+	height: 17px;
+}
+
+.strikerplus td {
+	padding: 0px 0px 20px;
+}
+
+
+.sortable th, .sortcol {
+	cursor: pointer;
+}
+
+.sortcol DIV {
+	padding: 0px 5px 0px 0px;
+}
+.sortasc DIV {
+	background: url('http://en3.strikermanager.com/img/new/up.gif') no-repeat right center;
+}
+.sortdesc DIV {
+	background: url('http://en3.strikermanager.com/img/new/down.gif') no-repeat right center;
+}
+
+.rowradios td {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.escudos td {
+	text-align: center;
+	padding: 2px 0px;
+}
+
+table.tablacolores
+{
+	width: 250px;
+	margin: 10px 10px 0px;
+}
+
+table.tablacolores td {
+padding: 0;
+}
+
+tr.tipo1 {
+/*	height: 18px;*/
+}
+tr.tipo2{
+/*	height: 18px;*/
+	background: url('http://en3.strikermanager.com/img/new/trtipo2.png');
+}
+
+img.bandera {
+	margin-top: 2px;
+}
+
+.foromens {
+	width: 570px;
+}
+
+.foromens TD {
+	padding: 5px;
+	color: #fff;
+	font-size: 14px;
+}
+
+.foromens .botonp {
+	float: right;
+}
+
+.foromens tr {
+	height: 68px;
+}
+
+.botones .botonp{
+	margin-left: 10px;
+}
+
+div.caja2 td {
+	color: #fff;
+}
+
+#divresumen td {
+	color: #fff;
+	height: 17px;
+}
+#divresumen table {
+	width: 350px;
+}
+#divresumen td a {
+	color: #fff;
+}
+
+#divresumen td a:hover {
+	color: #e94141;
+}
+
+#chat, #chatconectados
+{
+	height: 120px; 
+	overflow-y: scroll; 
+	overflow-x: hidden; 
+	margin-bottom: 10px;
+	font-size: 13px;	
+}
+
+#chat a 
+{
+	color: inherit;
+}
+
+#chat a:hover
+{
+	color: #fff;
+}
+
+h6 {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 20px 0px 0px;
+	margin: 0;
+}
+
+.botonesright
+{
+	float: right;
+}
+.centrado3 {
+	text-align: center;
+	width: 5px;
+}
+
+.datoscambio td {
+	color: #fff;
+}
+
+.classverde {
+	background: url('http://en3.strikermanager.com/img/new/classverde.png');
+}
+
+.classrojo {
+	background: url('http://en3.strikermanager.com/img/new/classrojo.png');
+}
+
+.classamarillo {
+	background: url('http://en3.strikermanager.com/img/new/classamarillo.png');
+}
+
+
+.tipo1_rojo {
+	background: url('http://en3.strikermanager.com/img/new/classrojo.png');
+}
+.tipo2_rojo {
+	background: url('http://en3.strikermanager.com/img/new/classrojotipo2.png');
+}
+.tipo1_verde {
+	background: url('http://en3.strikermanager.com/img/new/classverde.png');
+}
+.tipo2_verde {
+	background: url('http://en3.strikermanager.com/img/new/classverdetipo2.png');
+}
+
+.iniciomens {
+	height: 35px;
+	overflow: hidden;
+}
+
+#talineacion td.subtit {
+	font-weight: bold;
+	padding: 3px;
+	border-top: 3px solid #000;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.tl
+{
+	background: url('http://en3.strikermanager.com/img/new/tl.gif') 0px 0px no-repeat;
+}
+
+.tr
+{
+	background: url('http://en3.strikermanager.com/img/new/tr.gif') 100% 0px no-repeat;
+	padding-top: 9px;
+}
+
+.br
+{
+	background: url('http://en3.strikermanager.com/img/new/br.gif') 100% 100% no-repeat;
+	padding-right: 9px;
+}
+
+.bl
+{
+	background: url('http://en3.strikermanager.com/img/new/bl.gif') 0px 100% no-repeat;
+	padding-bottom: 9px;
+	padding-left: 9px;
+}
+
+#tentreno tr.tipo2 td {
+	padding: 0px 10px;
+	height: auto;
+}
+
+#calendario td 
+{
+	padding: 5px;
+}
+
+#calendario td div.gris, #calendario td div.negro, #calendario td div.tdrojo, #calendario td div.tdazul, #calendario td div.tdverde, #calendario td div.tdamarillo
+{
+	padding: 2px 4px;
+	background: url(http://en3.strikermanager.com/img/calendario.png) -0px -96px no-repeat;
+	width: 86px;
+	height: 44px;
+}
+
+#calendario td a
+{
+	color: #fff;
+}
+
+#calendario td div.tdamarillo
+{
+	background: url(http://en3.strikermanager.com/img/calendario.png) -0px -0px no-repeat;
+	color: #fff;
+}
+
+#calendario td div.negro
+{
+	background: url(http://en3.strikermanager.com/img/calendario.png) -0px -144px no-repeat;
+	color: #fff;
+}
+
+#calendario td div.tdverde
+{
+	background: url(http://en3.strikermanager.com/img/calendario.png) -0px -240px no-repeat;
+	color: #fff;
+}
+
+#calendario td div.tdrojo
+{
+	background: url(http://en3.strikermanager.com/img/calendario.png) -0px -192px no-repeat;
+	color: #fff;
+}
+
+#calendario td div.tdazul
+{
+	background: url(http://en3.strikermanager.com/img/calendario.png) -0px -48px no-repeat;
+	color: #fff;
+}
+
+
+#calendario .numdia 
+{
+	float: right;
+	font-size: 14px;
+	margin-left: 0px;
+}
+
+#calendario .calresultado 
+{
+	font-size: 12px;
+}
+
+#calendario td img.escudo25 {
+	float: left;
+	margin-right: 3px;
+	width: 43px;
+	height: 43px;
+}
+
+#calendario div.tipopart {
+	float: left;
+	margin-top: 0px;
+	font-size: 11px;
+	width: 40px;
+}
+
+#calendario td.th {
+	color: #000;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 0px 10px 8px;
+	text-align: center;
+	padding: 0px;
+}
+
+#plantilla table tr.tipo2
+{
+	background: none;
+}
+
+.estadojugador
+{
+	float: right; 
+	margin-right: 60px;
+	margin-top: 5px; 
+	font-size: 12px;
+}
+
+.estadojugador img {
+	margin: 0;
+}
+
+br.brfin
+{
+	font-size: 1px;
+	visibility: hidden;
+	display: none;
+}
+
+.cajaentrenamiento
+{
+	width: 370px;
+	float: left;
+	margin-right: 20px;
+}
+
+.jugadormenuflotante
+{
+	width: 163px;
+	position: absolute;
+	display: none;
+	margin-top: 22px;
+	padding-top: 2px;
+	padding-bottom: 6px;
+	background: url('http://en3.strikermanager.com/img/as/trans60.png') 0px 100% no-repeat;
+	cursor: pointer;
+	text-transform: capitalize;
+}
+
+.jugadormenuflotante a.boton, .jugadormenuflotante a.botonoro
+{
+	float: none;
+	margin-bottom: 1px;
+	margin-top: 0px;
+	text-transform: capitalize;
+}
+
+.jugadormenuflotante .container_oro{
+	float: none;
+}
+
+.jugadormenuflotante a.boton
+{
+	margin-left: 5px;
+	text-transform: capitalize;
+}
+
+.jugadormenuflotante a.botonoro 
+{
+	margin-left: 5px;
+}
+
+.menujugador
+{
+	float: right;
+}
+
+.botonmenujugador
+{
+	cursor: pointer;
+	z-index: 99;
+	position: absolute;
+}
+
+.fizqpeq img, .fderpeq img  
+{
+	vertical-align: text-top;
+}
+
+.textonormal
+{
+	font-weight: normal;
+}
+
+.caja2 td {
+	padding: 4px;
+	vertical-align: middle;
+}
+
+#tutorial, #borrado_usuario
+{
+	position: absolute;
+	background: rgba(255,255,255,1);
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	/* Box shadow */
+	/* Standard   */ box-shadow:         0 0 14px rgba(0,0,0,1);
+	/* Webkit     */ -webkit-box-shadow: 0 0 14px rgba(0,0,0,1);
+	/* Gecko      */ -moz-box-shadow:    0 0 14px rgba(0,0,0,1);
+	border-radius:10px;
+	width: 400px;
+	top: 200px;
+	left: 275px;
+	padding: 20px;
+	display: none;
+	cursor: pointer;
+	z-index: 10000;
+}
+
+#tutorial #tutinside, #borrado_usuario .tutinside
+{
+	color: #333;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	padding: 0px 10px 0px 150px;
+	font-weight: normal;
+	height: 220px;
+	background: url(http://en3.strikermanager.com/img/arbitro.jpg) no-repeat;
+}
+
+#tutorial h1, #borrado_usuario h1 {
+	background: url('http://en3.strikermanager.com/img/new/th.gif') 0px 18px repeat-x;
+	color: #333;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 0px 10px 8px;
+	text-align: center;
+}
+
+
+/* banners */
+
+.banner_sup {
+	background:#222222 url(http://en3.strikermanager.com/img/as/txt_publi_vert.gif) no-repeat scroll left center;
+	margin: 0 auto;
+	padding: 2px 0;
+	height: 98px;
+}
+
+.banner_sup_a {
+	display: inline;
+	float:left;
+	margin:0 0 0 13px;
+}
+
+.banner_sup_b {
+	display: inline;
+	float:left;
+	margin:0 0 0 6px;
+	padding:0 0 3px;
+	width:220px;
+}
+
+#amensajitos
+{
+	text-transform: lowercase;
+}
+
+#testadio td.last2
+{
+	padding-left: 80px;
+}
+
+.mensremodestadio
+{
+	height: 90px;
+}
+
+table.partestadio 
+{
+	margin: 0px 0px 0px; 
+}
+
+table.partestadio tr
+{
+	background: url('http://en3.strikermanager.com/img/as/trtipo3.png');
+	border-bottom: 2px solid #555;
+}
+
+table.partestadio tr td
+{
+	color: #fff;
+}
+
+
+#submenu ul, #submenu ul li, #sublogos ul, #sublogos ul li
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+#submenu
+{
+	padding: 5px 0px 5px 195px;
+}
+
+#submenu ul
+{
+	height: 18px;
+}
+
+#submenu a
+{
+	color: #828282;
+	font-weight: normal;
+	font-size: 11px;
+	display: block;
+	padding: 2px 12px;
+}
+
+#submenu ul li
+{
+	float: left;
+	border-right: 1px solid #555;
+}
+
+
+
+#submenu a:hover
+{
+	color: #fff;
+}
+
+#footer
+{
+	background: #000 url('http://en3.strikermanager.com/img/login/footer_bg.jpg') 0px 0px repeat-x;
+	height: 100px;
+	width: 1000px;
+}
+
+#sublogos {
+	padding: 15px 0px 0px 280px;
+}
+
+#sublogos ul li
+{
+	float: left;
+}
+
+#menu ul li.last, #submenu ul li.last
+{
+	border: none;
+}
+
+/* messenger */
+#messenger
+{
+	position: fixed;
+	bottom: 0px; 
+	height: 35px;
+	left: 0px;
+	right: 0px;
+	z-index: 1000000;
+	margin: 0px auto;
+	width: 1099px; 
+}
+
+#submessenger
+{
+	width: 999px; 
+	height: 27px; 
+	background: url('http://en3.strikermanager.com/img/as/messenger_bg.png') repeat-x scroll 0 0px; 
+	color: #fff; 
+	font-size: 12px;
+	font-weight: normal;
+	padding: 8px 0px 0px;
+	clear: both;
+	border: 0;
+}
+
+#messenger #menuconectados
+{
+	background: #000000 url('http://en3.strikermanager.com/img/login/footer_bg.jpg') repeat-x scroll 0 -1px; 
+	position: absolute;
+	top: 0px;
+	height: 25px;
+	width: 173px;
+	left: 0px;
+	border-left: 1px solid #9e9e9e;
+	border-right: 1px solid #9e9e9e;
+	border-top: none;
+	display: none;
+	overflow: hidden;
+}
+
+#messenger #menuconectados li
+{
+	display: block;
+	padding: 3px 3px 3px 20px;
+	font-size: 12px;
+	font-family: arial, helvetica;
+	font-weight: normal;
+	color: #fff;
+	border-bottom: 1px solid #9e9e9e;
+	background: url('http://en3.strikermanager.com/img/as/online.png') 0px 5px no-repeat;
+}
+
+#messenger #conectados, #messenger #salaschat
+{
+	border-right: 1px solid #9e9e9e;
+	border-left: 1px solid #9e9e9e;
+	float: left;
+	padding: 6px 10px 5px 10px;
+	background: none;
+	width: 153px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#messenger #salaschat
+{
+	float: right;
+	text-align: right;
+	background: url('http://en3.strikermanager.com/img/as/ichat.png') 120px 6px no-repeat;
+	padding: 6px 30px 5px 10px;
+	width: 100px;
+}
+
+#messenger .messuser
+{
+	border-right: 1px solid #9e9e9e;
+	float: left;
+	font-size: 12px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+#messenger .messuser div
+{
+	padding: 6px 10px 5px 20px;
+	background: url('http://en3.strikermanager.com/img/as/online.png') 0px 8px no-repeat;
+	width: 80px;
+	overflow: hidden;
+}
+
+#messenger #ventanachat
+{
+	position: absolute;
+	top: -300px;
+	left: 100px;
+	width: 371px;
+	height: 300px;
+	background: #000000 url('http://en3.strikermanager.com/img/login/footer_bg.jpg') repeat-x scroll 0 21px; 
+	border-top: 1px solid #9e9e9e;
+	border-left: 1px solid #9e9e9e;
+	border-right: 1px solid #9e9e9e;
+	display: none;
+}
+
+#messenger #nombreuserchat
+{
+	background: #b70402;
+	border-bottom: 2px solid #600;
+	padding: 3px;
+	font-weight: bold;
+}
+
+#messenger #nombreuserchat img
+{
+	float: left;
+	display: block;
+	margin-right: 5px;
+}
+
+#messenger #chat
+{
+	height: 224px;
+	margin-bottom: 0px;
+	padding: 5px;
+	float: left;
+	width: 250px;
+	border-right: 1px solid #fff;
+}
+
+#messenger #chatconectados
+{
+	height: 224px;
+	margin-bottom: 0px;
+	padding: 5px;
+	float: left;
+	width: 130px;
+}
+
+#messenger input
+{
+	font-size: 12px;
+	font-family: arial;
+	width: 342px;
+	border: 0;
+	border-top: 1px solid #9e9e9e;
+	background: #000 url('http://en3.strikermanager.com/img/as/ichat.png') no-repeat 5px 2px;
+	color: #fff;
+	padding: 2px 3px 2px 26px;
+}
+
+#messenger .subbordechat
+{
+	width: 120px;
+	background: #9e9e9e;
+	border-left: 110px solid #000;
+	height: 1px;
+}
+
+#nombreuserchat a.controlbox
+{
+	display: block;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('http://en3.strikermanager.com/img/as/messengerclose.png') no-repeat 0px 0px;
+	cursor: pointer;
+}
+
+#nombreuserchat a.mini
+{
+	background: url('http://en3.strikermanager.com/img/as/messengermini.png') no-repeat 0px 0px;
+}
+
+.idiomaedit
+{
+	border-bottom: 2px solid #cff;
+}
+
+#columnaderecha .botonera
+{
+	margin: 0px 0px 0px 15px;
+	padding-top: 10px;
+}
+
+#columnaderecha .botonera a.botonrojocorto, span.botonrojocortopress {
+	margin: 0px 3px 3px;
+}
+
+.imgcopa
+{
+	width: 167px;
+	height: 120px;
+	background: 50% 50% no-repeat;
+}
+
+.datoscopa
+{
+	background: url('http://en3.strikermanager.com/img/as/imgcopabg.png'); 
+	padding: 10px; 
+	width: 137px; 
+	height: 39px; 
+	margin: 0px 10px 0px 0px;
+}
+
+.palmcopa
+{
+	float: left;
+}
+
+
+
+#menusalaschat
+{
+	background: #000000 url('http://en3.strikermanager.com/img/login/footer_bg.jpg') repeat-x scroll 0 -1px; 
+	position: absolute;
+	top: 0px;
+	height: 0px;
+	width: 140px;
+	left: 0px;
+	border-left: 1px solid #9e9e9e;
+	border-right: 1px solid #9e9e9e;
+	border-top: none;
+	display: none; 
+	overflow: hidden;
+}
+
+#menusalaschat ul, #menusalaschat li
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menusalaschat li
+{
+	display: block;
+	padding: 3px 3px 3px 23px;
+	font-size: 12px;
+	font-family: arial, helvetica;
+	font-weight: normal;
+	color: #fff;
+	border-bottom: 1px solid #9e9e9e;
+	background: url('http://en3.strikermanager.com/img/as/ichat.png') 3px 4px no-repeat;
+}
+
+
+#estadochat, #boton_noticias_amigos
+{
+	border-left: 1px solid #9e9e9e;
+	float: left;
+	padding: 6px 8px 5px 8px;
+	width: 11px;
+	height: 15px;
+	font-size: 12px;
+	font-weight: normal;
+
+}
+
+#boton_noticias_amigos
+{
+	border: none;
+	padding: 5px 4px 6px;
+	height: 16px;
+	width: 16px;
+}
+
+#estadochat a, #boton_noticias_amigos a
+{
+	cursor: pointer;
+	display: block;
+	height: 15px;
+	width: 11px;
+	background: url('http://en3.strikermanager.com/img/as/offline.png') -4px 3px no-repeat;
+}
+
+#boton_noticias_amigos a
+{
+	background: url('http://en3.strikermanager.com/img/inews.png') 0px 0px no-repeat;
+	height: 16px;
+	width: 16px;
+}
+
+#estadiostats
+{
+	font-size: 12px;
+	height: 326px; 
+	width: 232px; 
+	float: left; 
+	margin-right: 5px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+#estadiofoto
+{
+	float: left; 
+	height: 326px; 
+	width: 546px;
+}
+
+.estadiopartido
+{
+	margin-bottom: 15px;
+}
+
+.anuncio
+{
+	background: #000;
+	border: 1px solid #fd0a0a;
+
+	font-weight: normal;
+	color: #fff;
+
+	padding: 6px 5px 14px;
+	font-size: 12px;
+	overflow: hidden;
+
+	margin-bottom: 5px;
+	height: 40px;
+	width: 170px;
+
+	-moz-border-radius: 5px;
+}
+
+.anuncio a
+{
+	font-weight: bold;
+}
+
+.anuncio a:hover
+{
+	text-decoration: underline;
+}
+
+#tooltip_ayuda
+{
+	position: absolute;
+	right: 190px;
+	top: 30px;
+	width: 300px;
+	display: none;
+}
+
+#tooltip_ayuda2
+{
+	position: absolute;
+	right: 15px;
+	top: 30px;
+	width: 300px;
+	display: none;
+}
+
+#tooltip_contents, #tooltip_contents2
+{
+	background: #ffc;
+	color: #000;
+	width: 280px;
+	border: 1px solid #666;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+	box-shadow:         3px 3px 6px rgba(0,0,0,1);
+	-webkit-box-shadow: 3px 3px 6px rgba(0,0,0,1);
+	-moz-box-shadow:    3px 3px 6px rgba(0,0,0,1);
+	font-weight: normal;
+	font-color: #666;
+	padding: 10px;
+	text-align: left;
+	font-size: 12px;
+	position: absolute;
+	z-index: 50;
+
+}
+
+#tooltip_contents2
+{
+	width: 140px;
+}
+
+#tooltip_flecha
+{
+	width: 24px;
+	height: 17px;
+	background: url(http://en3.strikermanager.com/img/help_flecha.png) 0px 0px no-repeat;
+	position: absolute;
+	z-index: 100;
+	top: -16px;
+	right: 15px;
+}
+
+#tooltip_flecha_h
+{
+	width: 17px;
+	height: 24px;
+	background: url(http://en3.strikermanager.com/img/help_flecha_h.png) 0px 0px no-repeat;
+	position: absolute;
+	z-index: 100;
+	top: 12px;
+	left: -16px;
+}
+
+.jugbarra
+{
+	width: 59px; 
+	height: 16px; 
+	background: #888;
+	margin: 0;
+	position: relative;
+}
+.jugbarracar
+{
+	position: absolute; 
+	height: 14px; 
+}
+.jugbarranum
+{
+	position: absolute; 
+	padding: 0px 3px 0px; 
+	color: #333; 
+	font-size: 11px;
+}
+
+h1.subtitulo
+{
+	padding: 0px 20px 0px;
+	font-size: 14px;
+	text-transform: capitalize;
+	margin-bottom: 5px;
+	height: 25px;
+	line-height: 25px;
+	background: url(http://en3.strikermanager.com/img/barratitulo.png) no-repeat;
+}
+
+#logros
+{
+	border: 1px outset #888;
+	padding: 5px;
+	background: #222;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	margin-bottom: 10px;
+}
+
+.logro_tutorial
+{
+	background: no-repeat 0px 50%;
+	padding: 3px 0px 3px 20px;
+	border-bottom: 1px dotted #999;
+	font-weight: normal;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+#logros .ovr
+{
+	background-color: #555;
+	text-decoration: underline;
+}
+
+#highlight
+{
+	border: 2px solid rgba(255,255,0,0.6);
+	background: rgba(255,255,0,0.1);
+	position: absolute;
+	z-index: 100000;
+	display: none;
+}
+
+#overlay
+{
+	position: absolute;
+	width: 1000px;
+	height: 850px;
+	background: rgba(0,0,0,0.7);
+	z-index: 10000;
+	display: none;
+}
+
+.caja100
+{
+	background: rgba(220,220,220,0.8);
+	border: 1px solid rgba(255,255,255,0.3);
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.7);
+	-webkit-box-shadow:0px 0px 10px rgba(0,0,0,0.7);
+	-moz-box-shadow:0px 0px 10px rgba(0,0,0,0.7);
+	padding: 10px;
+}
+
+.icono_pequeno_borrar{
+	width: 15px;
+	height: 15px;
+	background: url(http://en3.strikermanager.com/img/cross.png) no-repeat;
+}
+
+.icono_pequeno_edit{
+	width: 15px;
+	height: 15px;
+	background: url(http://en3.strikermanager.com/img/pencil.png) no-repeat;
+}
+
+#lista_entrenos
+{
+	height:280px;
+}
