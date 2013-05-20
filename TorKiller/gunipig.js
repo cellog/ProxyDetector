@@ -63,9 +63,9 @@ var remote = {
    }
    var stuff = remote.get("/sospechosos.php",
                           params, function(res) {
-                           var all = res.match(/href="denuncias\.php\?id=(\d+)&correcta=0">No<\/a><\/td>\s+<\/tr>\s+<tr class="tipo2">\s+<td colspan="2">&nbsp;<\/td>\s+<td colspan="1">Ha superado las 5000 peticiones en 1 día, posiblemente utiliza scripts.<\/td>/g);
+                           var all = res.match(/href="denuncias\.php\?id=(\d+)&correcta=0">No<\/a><\/td>\s+<\/tr>\s+<tr class="tipo.">\s+<td colspan="2">&nbsp;<\/td>\s+<td colspan="1">Ha superado las 5000 peticiones en 1 día, posiblemente utiliza scripts.<\/td>/g);
                            for (var i=0;i<all.length;i++) {
-                            var matchy = all[i].match(/href="denuncias\.php\?id=(\d+)&correcta=0">No<\/a><\/td>\s+<\/tr>\s+<tr class="tipo2">\s+<td colspan="2">&nbsp;<\/td>\s+<td colspan="1">Ha superado las 5000 peticiones en 1 día, posiblemente utiliza scripts.<\/td>/);
+                            var matchy = all[i].match(/href="denuncias\.php\?id=(\d+)&correcta=0">No<\/a><\/td>\s+<\/tr>\s+<tr class="tipo.">\s+<td colspan="2">&nbsp;<\/td>\s+<td colspan="1">Ha superado las 5000 peticiones en 1 día, posiblemente utiliza scripts.<\/td>/);
                             remote.get("/denuncias.php",
                                        {
                                         id: matchy[1],

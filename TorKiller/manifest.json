@@ -1,6 +1,6 @@
 {
   "name": "SM @ Proxy Detector",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "manifest_version": 2,
   "description": "Striker Manager Fiscal Proxy Detector",
   "content_scripts": [
